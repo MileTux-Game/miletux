@@ -9,6 +9,8 @@ If you pay for this fangame, you got scammed and should try get your money back.
 
 Was originally gonna be made using HaxeFlixel but I realized for the 912129129171934th time that HaxeFlixel just isn't good enough.
 
+This isn't a "remaster", don't expect this to be like SuperTux Classic (which is a good game you should play)
+
 ## Credits
 - SuperTux Team (SuperTux Milestone 1 and SuperTux Milestone 2 assets)
 - Vaesea (Main developer)
