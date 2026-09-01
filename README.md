@@ -1,4 +1,4 @@
-# FlixelTux
+# StoneTux
 This is a fanmade SuperTux v0.1.6 made using Godot!
 
 (Reason why I say v0.1.6 is because one of the old SuperTux developers is making a v0.1.5 (SuperTux Origins made by Grumbel))
