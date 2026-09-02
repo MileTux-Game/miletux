@@ -1,21 +1,17 @@
-# StoneTux
-This is a fanmade SuperTux v0.1.6 made using Godot!
+# MileTux
+This is a SuperTux fangame that aims to be like if I (Vaesea) made my own version of SuperTux using Godot. More info on that in the Info section.
 
-(Reason why I say v0.1.6 is because one of the old SuperTux developers is making a v0.1.5 (SuperTux Origins made by Grumbel))
+## Info
+The first version of this fangame will be v0.1.6. It'll be based on SuperTux Milestone 1 and will be a good "foundation" for later versions that will be based on SuperTux Milestone 2.
 
-This version is entirely fanmade. SuperTux Team does not have any involvement in the making of this fangame, that's why it's not named "SuperTux v0.1.6", it's named "FlixelTux"
-
-If you pay for this fangame, you got scammed and should try get your money back. This fangame is entirely free as in cost and "you can do whatever you want with it with only some tiny limitations as described in the GNU GPL 3 license"
-
-Was originally gonna be made using HaxeFlixel but I realized for the 912129129171934th time that HaxeFlixel just isn't good enough.
-
-This isn't a remaster, don't expect this to be like SuperTux Classic (which is a good game you should play)
+If you pay for this fangame, you got scammed and you should try get your money back. This fangame is entirely free as in cost and "you can do whatever you want with it with only some tiny limitations as described in the GNU GPL 3 license"
 
 ## Credits
 - SuperTux Team (SuperTux Milestone 1 and SuperTux Milestone 2 assets)
 - Vaesea (Main developer)
 - AnatolyStev (Some code)
+- Godot Developers and Contributors (The Godot Engine itself)
 
 ## Important Documentation
 - LICENSE (GNU GPL 3 license)
-- levelediting.md (Editing + Making levels in Godot)
+- The Wiki section of the repository is also good documentation if you intend to work on this or mod this.
