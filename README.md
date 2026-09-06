@@ -1,5 +1,5 @@
-# MileTux - https://gamejolt.com/games/miletux/1095514
-Last update: September 5, 2026
+# MileTux - https://miletux-game.github.io/
+Last update: September 6, 2026
 
 ## Description
 MileTux is a jump'n'run game meant to recreate old SuperTux's feel, using the old SuperTux assets and levels.
