@@ -29,7 +29,7 @@ Other useful keys include the Esc key, which is used to pause levels and go back
 In the worldmap, the arrow keys are used to navigate and Enter to enter the current level.
 
 ## Development status
-Nothing to see here yet.
+Development on Milestone 1 has started, but it's nowhere near finished yet.
 
 ## The End
 Thanks for trying out MileTux.
