@@ -13,7 +13,7 @@ size = Vector2(28, 28)
 [node name="Bomb" type="CharacterBody2D" unique_id=812875192]
 z_index = 49
 collision_layer = 4
-collision_mask = 5
+collision_mask = 261
 floor_max_angle = 1.3962634
 floor_snap_length = 10.0
 platform_on_leave = 2
@@ -62,3 +62,8 @@ panning_strength = 3.0
 [node name="Enabler" type="VisibleOnScreenEnabler2D" parent="." unique_id=36567572]
 rect = Rect2(-192, -192, 416, 416)
 show_rect = false
+
+[node name="GroundDetector" type="RayCast2D" parent="." unique_id=1741162572]
+position = Vector2(-1, 0)
+target_position = Vector2(0, 36)
+collision_mask = 257

@@ -50,6 +50,7 @@ _data = {
 [node name="Stalactite" type="CharacterBody2D" unique_id=292466066]
 z_index = -1
 collision_layer = 64
+collision_mask = 257
 floor_max_angle = 1.3962634
 floor_snap_length = 10.0
 script = ExtResource("1_0g7wl")

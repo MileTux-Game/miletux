@@ -170,9 +170,10 @@ func die():
 	$Stomp.set_deferred("monitorable", false)
 	$Stomp.set_deferred("monitoring", false)
 	
-	# Reduce coins by 25.
+	# Goodbye coins!
 	if Global.coins >= 25:
 		Global.coins -= 25
+		Signals.coin_collected.emit() # not exactly collected, but...
 	
 	# do the funny little fade
 	Fade.fade_in(0.33)

@@ -19,8 +19,8 @@ var tux_star_invincible = false
 var tux_reached_end = false
 var tux_state = TuxManager.current_state
 
-# Doesn't exist yet! Will exist later.
-var first_worldmap = "res://src/levels/test/worldmap.tscn"
+# It exists!
+var first_worldmap = "res://src/levels/world1/worldmap.tscn"
 
 # Worldmap
 var worldmap_name:String

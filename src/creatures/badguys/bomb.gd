@@ -3,6 +3,11 @@ class_name Bomb
 
 const explosion_scene = preload("res://src/creatures/badguys/explosion.tscn")
 
+var ground_detector_x_left = -3.0
+var ground_detector_x_right = 35.0
+
+var gd_was_colliding = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$TuxDetector.connect("area_entered", _on_tux_detector_area_entered)
@@ -21,6 +26,15 @@ func _physics_process(delta: float) -> void:
 	
 	if current_state == BadguyStates.ALIVE:
 		velocity.x = direction * speed
+		
+		if current_state == BadguyStates.ALIVE:
+			if direction == -1:
+				$GroundDetector.position.x = -1.0
+			else:
+				$GroundDetector.position.x = 29.0
+			
+			if not $GroundDetector.is_colliding() and is_on_floor() and gd_was_colliding:
+				flip_direction()
 	else:
 		velocity.x = 0
 	
@@ -33,6 +47,7 @@ func _physics_process(delta: float) -> void:
 		$Image.flip_h = false
 	
 	was_on_wall = is_on_wall()
+	gd_was_colliding = $GroundDetector.is_colliding()
 	
 	move_and_slide()
 

@@ -16,7 +16,7 @@ size = Vector2(544, 1408)
 [node name="Jumpy" type="CharacterBody2D" unique_id=812875192]
 z_index = 49
 collision_layer = 4
-collision_mask = 5
+collision_mask = 261
 floor_max_angle = 1.3962634
 floor_snap_length = 10.0
 platform_on_leave = 2

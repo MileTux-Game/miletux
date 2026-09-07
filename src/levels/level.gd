@@ -38,9 +38,9 @@ func find_spawnpoint():
 	if not Global.checkpoint_reached or Global.coins <= 25:
 		for spawn in get_tree().get_nodes_in_group("TuxSpawnpoint"):
 			if spawn.spawnpoint_name == main_spawnpoint:
-				$Tux.global_position = spawn.global_position + Vector2(13, -7)
+				$Tux.global_position = spawn.global_position + Vector2(13, -8)
 	else:
-		$Tux.global_position = Global.checkpoint_position - Vector2(13, -7)
+		$Tux.global_position = Global.checkpoint_position - Vector2(13, -8)
 
 func _physics_process(delta: float) -> void:
 	if Global.paused:
@@ -53,12 +53,10 @@ func _physics_process(delta: float) -> void:
 				# using get_real_velocity().x fixes an issue where the camera 
 				# would extend while tux was running and jumping at a wall
 				var target_look_ahead = sign($Tux.get_real_velocity().x) * $Camera.look_ahead
-				
-				$Camera.current_look_ahead = move_toward($Camera.current_look_ahead, target_look_ahead, 330 * delta)
+				$Camera.current_look_ahead = move_toward($Camera.current_look_ahead, target_look_ahead, 360 * delta)
 				
 				var target_x = $Tux.global_position.x + $Camera.current_look_ahead
-				
-				$Camera.global_position.x = move_toward($Camera.global_position.x, target_x, 330 * delta)
+				$Camera.global_position.x = move_toward($Camera.global_position.x, target_x, 360 * delta)
 		else:
 			$Camera.global_position.x += autoscroll_speed * delta
 
@@ -66,6 +64,8 @@ func _on_level_finished():
 	Global.paused = false
 	Engine.time_scale = 1.0
 	Global.tux_star_invincible = false
+	Global.checkpoint_reached = false
+	Global.tux_reached_end = false
 	if scene_file_path not in Global.completed_levels:
 		Global.completed_levels.append(scene_file_path)
 	

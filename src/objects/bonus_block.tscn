@@ -136,10 +136,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qx0a"]
-size = Vector2(1, 32)
+size = Vector2(1, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6p1t"]
-size = Vector2(1, 32)
+size = Vector2(1, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1mplm"]
 size = Vector2(30, 1)
@@ -170,7 +170,7 @@ collision_layer = 256
 collision_mask = 30
 
 [node name="Collision" type="CollisionShape2D" parent="DetectorLeft" unique_id=1396700121]
-position = Vector2(-0.5, 16)
+position = Vector2(-0.5, 16.5)
 shape = SubResource("RectangleShape2D_1qx0a")
 
 [node name="DetectorRight" type="Area2D" parent="." unique_id=1459119764]
@@ -178,7 +178,7 @@ collision_layer = 256
 collision_mask = 30
 
 [node name="Collision" type="CollisionShape2D" parent="DetectorRight" unique_id=1425716193]
-position = Vector2(32.5, 16)
+position = Vector2(32.5, 16.5)
 shape = SubResource("RectangleShape2D_i6p1t")
 
 [node name="DetectorDown" type="Area2D" parent="." unique_id=1159858456]

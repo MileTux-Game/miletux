@@ -16,8 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://br7q61r02s85" path="res://src/creatures/badguys/jumpy.tscn" id="14_db3vg"]
 [ext_resource type="PackedScene" uid="uid://bov86ofhwnhpq" path="res://src/objects/goal.tscn" id="15_f50wm"]
 [ext_resource type="PackedScene" uid="uid://cgevbinru2wi2" path="res://src/objects/checkpoint.tscn" id="16_tomn1"]
+[ext_resource type="PackedScene" uid="uid://b340k12byw0ja" path="res://src/objects/tux_spawnpoint.tscn" id="17_qfr4d"]
 
-[node name="WelcomeToAntarctica" type="Node2D" unique_id=131155539]
+[node name="WTA" type="Node2D" unique_id=131155539]
 script = ExtResource("1_pons6")
 width = 310
 level_name = "Welcome To Antarctica"
@@ -50,7 +51,7 @@ tile_set = ExtResource("3_qm2qw")
 collision_enabled = false
 
 [node name="Tux" parent="." unique_id=345015657 instance=ExtResource("4_5ocg3")]
-position = Vector2(111, 408)
+position = Vector2(-128, -96)
 
 [node name="Camera" parent="." unique_id=1917637807 instance=ExtResource("5_o3luq")]
 
@@ -283,3 +284,6 @@ type = 1
 
 [node name="Checkpoint" parent="." unique_id=1199848333 instance=ExtResource("16_tomn1")]
 position = Vector2(5368, 288)
+
+[node name="TuxSpawnpoint" parent="." unique_id=1156520866 instance=ExtResource("17_qfr4d")]
+position = Vector2(96, 416)
