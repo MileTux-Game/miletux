@@ -46,17 +46,19 @@ func _physics_process(delta: float) -> void:
 	if Global.paused:
 		return
 	
+	# TODO: Move this code to the camera's script.
 	if not get_node_or_null("Tux") == null:
 		if not manual_camera:
-			if abs($Tux.velocity.x) > 15.0:
-				var target_look_ahead = sign($Tux.velocity.x) * $Camera.look_ahead
+			if abs($Tux.get_real_velocity().x) > 15.0:
+				# using get_real_velocity().x fixes an issue where the camera 
+				# would extend while tux was running and jumping at a wall
+				var target_look_ahead = sign($Tux.get_real_velocity().x) * $Camera.look_ahead
 				
-				#$Camera.current_look_ahead = lerp($Camera.current_look_ahead, target_look_ahead, 1.0 - exp(-2.0 * delta))
-				$Camera.current_look_ahead = move_toward($Camera.current_look_ahead, target_look_ahead, 450 * delta)
+				$Camera.current_look_ahead = move_toward($Camera.current_look_ahead, target_look_ahead, 330 * delta)
 				
 				var target_x = $Tux.global_position.x + $Camera.current_look_ahead
 				
-				$Camera.global_position.x = move_toward($Camera.global_position.x, target_x, 450 * delta)
+				$Camera.global_position.x = move_toward($Camera.global_position.x, target_x, 330 * delta)
 		else:
 			$Camera.global_position.x += autoscroll_speed * delta
 
