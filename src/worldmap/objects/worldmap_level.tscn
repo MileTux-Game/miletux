@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bqm7b3kpsth0o"]
+
+[ext_resource type="SpriteFrames" uid="uid://cgdwoaedwn7j1" path="res://data/spriteframes/level.tres" id="1_i2bb4"]
+[ext_resource type="Script" uid="uid://dlwb1vyjy0n1g" path="res://src/worldmap/objects/worldmap_level.gd" id="2_ckrg8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dfipr"]
+radius = 9.0
+
+[node name="Level" type="AnimatedSprite2D" unique_id=1440158541]
+process_mode = 3
+sprite_frames = ExtResource("1_i2bb4")
+animation = &"red"
+frame_progress = 1.0
+centered = false
+script = ExtResource("2_ckrg8")
+
+[node name="Detector" type="Area2D" parent="." unique_id=122486868]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=1710752526]
+position = Vector2(15.5, 15.5)
+shape = SubResource("CircleShape2D_dfipr")

@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://c1cy1acdggjuq"]
+
+[ext_resource type="SpriteFrames" uid="uid://b6phbliawmhfv" path="res://data/spriteframes/bonus_block.tres" id="1_1qx0a"]
+[ext_resource type="Script" uid="uid://c371y1p8tqqae" path="res://src/objects/bonus_block.gd" id="1_i6p1t"]
+[ext_resource type="AudioStream" uid="uid://qii8va8f607h" path="res://data/sounds/brick.wav" id="3_gxeff"]
+[ext_resource type="AudioStream" uid="uid://jjya3mstgixn" path="res://data/sounds/upgrade.wav" id="4_nc5cv"]
+[ext_resource type="AudioStream" uid="uid://c5jixsyfuy0if" path="res://data/sounds/coin.wav" id="5_w32vj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfipr"]
+size = Vector2(32, 32)
+
+[sub_resource type="Animation" id="Animation_1qx0a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DetectorUp/Collision:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-0.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Collision:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16.0]
+}
+
+[sub_resource type="Animation" id="Animation_i6p1t"]
+resource_name = "up_down"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -12.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DetectorUp/Collision:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.5, -12.5, -0.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Collision:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [16.0, 4.0, 16.0]
+}
+
+[sub_resource type="Animation" id="Animation_gxeff"]
+resource_name = "up_gone"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:offset:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -12.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DetectorUp/Collision:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.5, -12.5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Collision:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [16.0, 4.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xl6vq"]
+_data = {
+&"RESET": SubResource("Animation_1qx0a"),
+&"up_down": SubResource("Animation_i6p1t"),
+&"up_gone": SubResource("Animation_gxeff")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qx0a"]
+size = Vector2(1, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6p1t"]
+size = Vector2(1, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mplm"]
+size = Vector2(30, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl6vq"]
+size = Vector2(32, 1)
+
+[node name="BonusBlock" type="StaticBody2D" unique_id=368355438]
+z_index = 2
+collision_layer = 256
+collision_mask = 1630
+script = ExtResource("1_i6p1t")
+
+[node name="Image" type="AnimatedSprite2D" parent="." unique_id=1376034192]
+sprite_frames = ExtResource("1_1qx0a")
+animation = &"normal"
+centered = false
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=429688088]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_dfipr")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1772825536]
+libraries/ = SubResource("AnimationLibrary_xl6vq")
+
+[node name="DetectorLeft" type="Area2D" parent="." unique_id=143570671]
+collision_layer = 256
+collision_mask = 30
+
+[node name="Collision" type="CollisionShape2D" parent="DetectorLeft" unique_id=1396700121]
+position = Vector2(-0.5, 16)
+shape = SubResource("RectangleShape2D_1qx0a")
+
+[node name="DetectorRight" type="Area2D" parent="." unique_id=1459119764]
+collision_layer = 256
+collision_mask = 30
+
+[node name="Collision" type="CollisionShape2D" parent="DetectorRight" unique_id=1425716193]
+position = Vector2(32.5, 16)
+shape = SubResource("RectangleShape2D_i6p1t")
+
+[node name="DetectorDown" type="Area2D" parent="." unique_id=1159858456]
+collision_layer = 256
+collision_mask = 30
+
+[node name="Collision" type="CollisionShape2D" parent="DetectorDown" unique_id=1053975012]
+position = Vector2(16, 32.5)
+shape = SubResource("RectangleShape2D_1mplm")
+
+[node name="DetectorUp" type="Area2D" parent="." unique_id=63142755]
+collision_layer = 256
+collision_mask = 28
+
+[node name="Collision" type="CollisionShape2D" parent="DetectorUp" unique_id=1900607728]
+position = Vector2(16, -0.5)
+shape = SubResource("RectangleShape2D_xl6vq")
+
+[node name="BrickSound" type="AudioStreamPlayer2D" parent="." unique_id=1108367765]
+stream = ExtResource("3_gxeff")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="Upgrade" type="AudioStreamPlayer2D" parent="." unique_id=1368688774]
+stream = ExtResource("4_nc5cv")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="Coin" type="AudioStreamPlayer2D" parent="." unique_id=594860221]
+stream = ExtResource("5_w32vj")
+max_distance = 1280.0
+panning_strength = 3.0

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://1ot2jrxje16q"]
+
+[ext_resource type="Texture2D" uid="uid://dbajep3woxsbo" path="res://data/images/powerups/egg/egg.png" id="1_axbyq"]
+[ext_resource type="Script" uid="uid://bwerif7r5bwm3" path="res://src/objects/powerup/egg.gd" id="1_yr4ju"]
+[ext_resource type="Texture2D" uid="uid://bac0f3kik3uui" path="res://data/images/powerups/egg/egg-shade.png" id="2_yr4ju"]
+
+[sub_resource type="Animation" id="Animation_5357d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NormalImage:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xg5we"]
+resource_name = "rotate"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NormalImage:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rtdkw"]
+_data = {
+&"RESET": SubResource("Animation_5357d"),
+&"rotate": SubResource("Animation_xg5we")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qm2qw"]
+size = Vector2(28, 28)
+
+[node name="Egg" type="CharacterBody2D" unique_id=2119055512]
+z_index = 1
+collision_layer = 512
+collision_mask = 257
+script = ExtResource("1_yr4ju")
+
+[node name="NormalImage" type="Sprite2D" parent="." unique_id=721199935]
+texture = ExtResource("1_axbyq")
+
+[node name="ShadeImage" type="Sprite2D" parent="." unique_id=1822701682]
+texture = ExtResource("2_yr4ju")
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1494326583]
+libraries/ = SubResource("AnimationLibrary_rtdkw")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=585722012]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_qm2qw")
+
+[node name="Detector" type="Area2D" parent="." unique_id=1646234852]
+collision_layer = 512
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="Detector" unique_id=1925238401]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_qm2qw")

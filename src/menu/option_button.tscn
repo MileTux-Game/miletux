@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://deos4mo5jkkf8"]
+
+[ext_resource type="FontFile" uid="uid://boltmv8cfep8v" path="res://data/fonts/SuperTux-Medium.ttf" id="1_l1ddc"]
+[ext_resource type="StyleBox" uid="uid://c3uar07f52bxx" path="res://data/styles/main_menu_button.tres" id="2_tiek2"]
+[ext_resource type="Texture2D" uid="uid://byoooc5oth8q8" path="res://data/images/objects/coin/coin-0.png" id="3_2420g"]
+[ext_resource type="Script" uid="uid://dry5pyevuv72" path="res://src/menu/option_button.gd" id="4_rdr2s"]
+
+[node name="OptionButton" type="Button" unique_id=886604678]
+offset_right = 160.0
+offset_bottom = 32.0
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("1_l1ddc")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("2_tiek2")
+toggle_mode = true
+button_pressed = true
+text = "Option"
+icon = ExtResource("3_2420g")
+expand_icon = true
+script = ExtResource("4_rdr2s")

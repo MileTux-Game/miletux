@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dlq164mkeeoro"]
+
+[ext_resource type="Texture2D" uid="uid://b0we6kfxcjlnv" path="res://data/images/creatures/jumpy/left-down.png" id="1_msf6t"]
+[ext_resource type="Texture2D" uid="uid://cufiluge2sdhg" path="res://data/images/creatures/jumpy/left-middle.png" id="2_ingb5"]
+[ext_resource type="Texture2D" uid="uid://d6kygsm3l2o5" path="res://data/images/creatures/jumpy/left-up.png" id="3_urn7s"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_msf6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ingb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_urn7s")
+}],
+"loop": 0,
+"name": &"bounce",
+"speed": 10.0
+}]

@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c6wkaswnb8ukv"]
+
+[ext_resource type="Script" uid="uid://x6h5p704f4a6" path="res://src/worldmap/objects/worldmap_tux.gd" id="1_jj2al"]
+[ext_resource type="SpriteFrames" uid="uid://dy0ow6nwg5jta" path="res://data/spriteframes/worldmap_tux.tres" id="1_rjv5p"]
+[ext_resource type="SpriteFrames" uid="uid://d0ojcu4a14nqo" path="res://data/spriteframes/worldmap_tux_fire.tres" id="2_jsf1b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dfipr"]
+radius = 4.0
+height = 22.0
+
+[node name="WorldmapTux" type="CharacterBody2D" unique_id=967795375]
+process_mode = 1
+z_index = 50
+script = ExtResource("1_jj2al")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1740898287]
+limit_left = 0
+limit_top = 0
+
+[node name="Image" type="AnimatedSprite2D" parent="." unique_id=850560479]
+sprite_frames = ExtResource("1_rjv5p")
+animation = &"stand"
+centered = false
+offset = Vector2(-2, -3)
+
+[node name="FireImage" type="AnimatedSprite2D" parent="." unique_id=2081937941]
+visible = false
+sprite_frames = ExtResource("2_jsf1b")
+animation = &"stand"
+centered = false
+offset = Vector2(-2, -2)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=829443229]
+position = Vector2(17, 27)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_dfipr")

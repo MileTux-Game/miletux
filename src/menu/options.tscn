@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://hgk4jpeagrbd"]
+
+[ext_resource type="Script" uid="uid://dctpe2408qxcd" path="res://src/menu/options.gd" id="1_lwr04"]
+[ext_resource type="Texture2D" uid="uid://c5uvp3myumpjh" path="res://data/images/background/cave.jpg" id="1_uoq6d"]
+[ext_resource type="FontFile" uid="uid://boltmv8cfep8v" path="res://data/fonts/SuperTux-Medium.ttf" id="2_lwr04"]
+[ext_resource type="PackedScene" uid="uid://deos4mo5jkkf8" path="res://src/menu/option_button.tscn" id="3_lwr04"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mjpc0"]
+bg_color = Color(0.53999996, 0.7546667, 1, 0.59607846)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0.59607846)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 16
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="Options" type="Node2D" unique_id=626973236]
+script = ExtResource("1_lwr04")
+
+[node name="Background" type="Parallax2D" parent="." unique_id=1829166110]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(-50, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1226458783]
+modulate = Color(0.25, 0.25, 0.25, 1)
+texture = ExtResource("1_uoq6d")
+centered = false
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=27836654]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 608.0
+offset_bottom = 171.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mjpc0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1953417434]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Particles" parent="Panel/VBoxContainer" unique_id=886604678 instance=ExtResource("3_lwr04")]
+layout_mode = 2
+text = "Particles"
+
+[node name="LevelHUD" parent="Panel/VBoxContainer" unique_id=1142515070 instance=ExtResource("3_lwr04")]
+layout_mode = 2
+text = "Level HUD"
+
+[node name="UseWASD" parent="Panel/VBoxContainer" unique_id=1457739385 instance=ExtResource("3_lwr04")]
+layout_mode = 2
+disabled = true
+button_pressed = false
+text = "Controls (Will be implemented in v0.1.7)"
+
+[node name="DebugMode" parent="Panel/VBoxContainer" unique_id=894750276 instance=ExtResource("3_lwr04")]
+layout_mode = 2
+button_pressed = false
+text = "Debug (Read Github Wiki for info)"
+
+[node name="Info" type="RichTextLabel" parent="." unique_id=838591650]
+offset_top = 384.0
+offset_right = 640.0
+offset_bottom = 480.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 6
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = ExtResource("2_lwr04")
+bbcode_enabled = true
+text = "[wave]If the button is dark and has a coin, that means the option is enabled!
+
+You can press the Escape key to go back to the main menu![/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1

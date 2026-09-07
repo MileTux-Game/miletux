@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bw4jxqkhhpshq"]
+
+[ext_resource type="Texture2D" uid="uid://d4nd332k3q2ik" path="res://data/images/creatures/spiky/left-0.png" id="1_pa7dg"]
+[ext_resource type="Texture2D" uid="uid://lvw5nwot00pj" path="res://data/images/creatures/spiky/left-1.png" id="2_rawto"]
+[ext_resource type="Texture2D" uid="uid://cua8k20t6yrie" path="res://data/images/creatures/spiky/left-2.png" id="3_ynjm0"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pa7dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rawto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ynjm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rawto")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 8.0
+}]

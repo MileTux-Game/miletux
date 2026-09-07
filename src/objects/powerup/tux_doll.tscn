@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://clmtb5ep14ckj"]
+
+[ext_resource type="Script" uid="uid://d1i473uyalapq" path="res://src/objects/powerup/tux_doll.gd" id="1_ku1qw"]
+[ext_resource type="Texture2D" uid="uid://cv8i3b5yx7keb" path="res://data/images/powerups/tuxdoll/tuxdoll.png" id="2_6qq41"]
+[ext_resource type="AudioStream" uid="uid://os0uw4hg15xv" path="res://data/sounds/lifeup.ogg" id="3_86drh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qm2qw"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ku1qw"]
+size = Vector2(32, 32)
+
+[node name="TuxDoll" type="CharacterBody2D" unique_id=2119055512]
+z_index = 1
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ku1qw")
+
+[node name="Image" type="Sprite2D" parent="." unique_id=721199935]
+texture = ExtResource("2_6qq41")
+centered = false
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=585722012]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_qm2qw")
+disabled = true
+
+[node name="Detector" type="Area2D" parent="." unique_id=1646234852]
+collision_layer = 512
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="Detector" unique_id=1925238401]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_ku1qw")
+
+[node name="Life" type="AudioStreamPlayer" parent="." unique_id=807262957]
+stream = ExtResource("3_86drh")

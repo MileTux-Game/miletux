@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dywa2f2fbtmh4"]
+
+[ext_resource type="FontFile" uid="uid://boltmv8cfep8v" path="res://data/fonts/SuperTux-Medium.ttf" id="1_igqhd"]
+[ext_resource type="Script" uid="uid://c57fgxiyu3wut" path="res://src/menu/text_scroll.gd" id="2_1nhts"]
+
+[node name="TextScroll" type="RichTextLabel" unique_id=1665166325]
+offset_right = 640.0
+offset_bottom = 480.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 1
+theme_override_constants/paragraph_separation = 4
+theme_override_constants/shadow_outline_size = 8
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("1_igqhd")
+bbcode_enabled = true
+text = "[font_size=32]- Penny gets captured! -[/font_size]
+
+Tux and Penny were out having a nice picnic on the ice fields of Antarctica. Suddenly, a creature jumped out from behind an ice bush, there was a flash, and Tux fell unconscious!
+
+When Tux woke up, he found that Penny was missing. Where she lay before now lies a letter!
+
+\"Tux, my arch enemy!\", says the letter. \"I have captured your beautiful Penny and have taken her to my fortress. The path to my fortress is littered with my badguys. Give up on the thought of saving her, you haven't got a chance! -Nolok\"
+
+Tux looks and sees Nolok's fortress in the distance. Determined to save his beloved Penny, he begins his journey."
+horizontal_alignment = 1
+script = ExtResource("2_1nhts")

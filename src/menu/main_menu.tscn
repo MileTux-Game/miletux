@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://bsvoc8334cq1d"]
+
+[ext_resource type="Texture2D" uid="uid://md2t5n2pk33u" path="res://data/images/background/arctis.jpg" id="1_1k071"]
+[ext_resource type="Script" uid="uid://cselul0whej81" path="res://src/menu/main_menu.gd" id="1_p2uv2"]
+[ext_resource type="FontFile" uid="uid://boltmv8cfep8v" path="res://data/fonts/SuperTux-Medium.ttf" id="2_g2ne3"]
+[ext_resource type="StyleBox" uid="uid://c3uar07f52bxx" path="res://data/styles/main_menu_button.tres" id="3_o3lno"]
+[ext_resource type="Texture2D" uid="uid://d10xbtew46xgo" path="res://data/images/menu/logo.png" id="3_pdh6n"]
+[ext_resource type="Texture2D" uid="uid://cge6771gxvuo" path="res://data/images/menu/frame.png" id="4_such8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfipr"]
+bg_color = Color(0.53999996, 0.7546667, 1, 0.59607846)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 0.59607846)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 16
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[node name="MainMenu" type="Node2D" unique_id=453985250]
+script = ExtResource("1_p2uv2")
+
+[node name="Background" type="Parallax2D" parent="." unique_id=2142235754]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(-50, 0)
+repeat_times = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=888592933]
+modulate = Color(0.25, 0.25, 0.25, 1)
+texture = ExtResource("1_1k071")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1675591946]
+position = Vector2(320, 128)
+texture = ExtResource("3_pdh6n")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=730117898]
+z_index = 100
+texture = ExtResource("4_such8")
+centered = false
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=130082136]
+offset_left = 224.0
+offset_top = 224.0
+offset_right = 421.0
+offset_bottom = 382.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dfipr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=403974041]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Play" type="Button" parent="Panel/VBoxContainer" unique_id=2103547963]
+layout_mode = 2
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_g2ne3")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("3_o3lno")
+theme_override_styles/pressed = ExtResource("3_o3lno")
+text = "Start Game"
+
+[node name="BonusLevels" type="Button" parent="Panel/VBoxContainer" unique_id=1418460111]
+layout_mode = 2
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_g2ne3")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("3_o3lno")
+theme_override_styles/pressed = ExtResource("3_o3lno")
+text = "Bonus Levels"
+
+[node name="Options" type="Button" parent="Panel/VBoxContainer" unique_id=2038598506]
+layout_mode = 2
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_g2ne3")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("3_o3lno")
+theme_override_styles/pressed = ExtResource("3_o3lno")
+text = "Options"
+
+[node name="Credits" type="Button" parent="Panel/VBoxContainer" unique_id=717542512]
+layout_mode = 2
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_g2ne3")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("3_o3lno")
+theme_override_styles/pressed = ExtResource("3_o3lno")
+text = "Credits
+"
+
+[node name="Exit" type="Button" parent="Panel/VBoxContainer" unique_id=912200932]
+layout_mode = 2
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_g2ne3")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("3_o3lno")
+theme_override_styles/pressed = ExtResource("3_o3lno")
+text = "Exit"

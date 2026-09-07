@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://fgeuxr5031o8"]
+
+[ext_resource type="Script" uid="uid://242vla4nmakg" path="res://src/creatures/badguys/flying_snowball.gd" id="1_3bj48"]
+[ext_resource type="AudioStream" uid="uid://bcvpy2ky5v14t" path="res://data/sounds/fall.ogg" id="1_gwnvp"]
+[ext_resource type="AudioStream" uid="uid://clo07kourcwdd" path="res://data/sounds/squish.wav" id="2_4jjci"]
+[ext_resource type="SpriteFrames" uid="uid://qq55baeglsfb" path="res://data/spriteframes/flying_snowball.tres" id="2_g3ryr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfipr"]
+size = Vector2(28, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3bj48"]
+size = Vector2(544, 1408)
+
+[node name="FlyingSnowball" type="CharacterBody2D" unique_id=812875192]
+z_index = 49
+collision_layer = 4
+collision_mask = 5
+floor_max_angle = 1.3962634
+floor_snap_length = 10.0
+platform_on_leave = 2
+script = ExtResource("1_3bj48")
+
+[node name="Image" type="AnimatedSprite2D" parent="." unique_id=1128999411]
+position = Vector2(-4, -5)
+sprite_frames = ExtResource("2_g3ryr")
+animation = &"flying"
+centered = false
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2084954999]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_dfipr")
+
+[node name="TuxDetector" type="Area2D" parent="." unique_id=726561408]
+collision_layer = 8
+collision_mask = 18
+
+[node name="Collision" type="CollisionShape2D" parent="TuxDetector" unique_id=2140942907]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_dfipr")
+
+[node name="TuxLeftDetector" type="Area2D" parent="." unique_id=783225015]
+collision_layer = 8
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="TuxLeftDetector" unique_id=499599067]
+visible = false
+position = Vector2(-288, 64)
+shape = SubResource("RectangleShape2D_3bj48")
+
+[node name="TuxRightDetector" type="Area2D" parent="." unique_id=2046353649]
+collision_layer = 8
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="TuxRightDetector" unique_id=365681962]
+visible = false
+position = Vector2(320, 64)
+shape = SubResource("RectangleShape2D_3bj48")
+
+[node name="Fall" type="AudioStreamPlayer2D" parent="." unique_id=1623252069]
+stream = ExtResource("1_gwnvp")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="Squish" type="AudioStreamPlayer2D" parent="." unique_id=1447074137]
+stream = ExtResource("2_4jjci")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="DirectionChange" type="Timer" parent="." unique_id=32432558]
+one_shot = true

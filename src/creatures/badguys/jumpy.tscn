@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://br7q61r02s85"]
+
+[ext_resource type="Script" uid="uid://c6iei71qs1mbg" path="res://src/creatures/badguys/jumpy.gd" id="1_ask4c"]
+[ext_resource type="AudioStream" uid="uid://bcvpy2ky5v14t" path="res://data/sounds/fall.ogg" id="1_jvx10"]
+[ext_resource type="SpriteFrames" uid="uid://dlq164mkeeoro" path="res://data/spriteframes/jumpy.tres" id="2_4rxgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfipr"]
+size = Vector2(24, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ask4c"]
+size = Vector2(24, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptb2r"]
+size = Vector2(544, 1408)
+
+[node name="Jumpy" type="CharacterBody2D" unique_id=812875192]
+z_index = 49
+collision_layer = 4
+collision_mask = 5
+floor_max_angle = 1.3962634
+floor_snap_length = 10.0
+platform_on_leave = 2
+script = ExtResource("1_ask4c")
+
+[node name="Image" type="AnimatedSprite2D" parent="." unique_id=1128999411]
+position = Vector2(-7, -4)
+sprite_frames = ExtResource("2_4rxgp")
+animation = &"bounce"
+frame = 2
+frame_progress = 1.0
+centered = false
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2084954999]
+position = Vector2(16, 29)
+shape = SubResource("RectangleShape2D_dfipr")
+
+[node name="TuxDetector" type="Area2D" parent="." unique_id=726561408]
+collision_layer = 8
+collision_mask = 18
+
+[node name="Collision" type="CollisionShape2D" parent="TuxDetector" unique_id=2140942907]
+position = Vector2(16, 29)
+shape = SubResource("RectangleShape2D_ask4c")
+
+[node name="TuxLeftDetector" type="Area2D" parent="." unique_id=1382028154]
+collision_layer = 8
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="TuxLeftDetector" unique_id=804345059]
+visible = false
+position = Vector2(-288, 64)
+shape = SubResource("RectangleShape2D_ptb2r")
+
+[node name="TuxRightDetector" type="Area2D" parent="." unique_id=1017668219]
+collision_layer = 8
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="TuxRightDetector" unique_id=1058030914]
+visible = false
+position = Vector2(320, 64)
+shape = SubResource("RectangleShape2D_ptb2r")
+
+[node name="Fall" type="AudioStreamPlayer2D" parent="." unique_id=1623252069]
+stream = ExtResource("1_jvx10")
+max_distance = 1280.0
+panning_strength = 3.0

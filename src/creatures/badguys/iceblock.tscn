@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dyxgmjr08l70p"]
+
+[ext_resource type="SpriteFrames" uid="uid://bfdlglg3yav1y" path="res://data/spriteframes/iceblock.tres" id="1_lmpxj"]
+[ext_resource type="Script" uid="uid://b5wua00ucri0d" path="res://src/creatures/badguys/iceblock.gd" id="1_mv22f"]
+[ext_resource type="AudioStream" uid="uid://bcvpy2ky5v14t" path="res://data/sounds/fall.ogg" id="1_tdef3"]
+[ext_resource type="AudioStream" uid="uid://bbp1x1nl07kiy" path="res://data/sounds/stomp.wav" id="3_uucug"]
+[ext_resource type="AudioStream" uid="uid://btoxyf66fb12j" path="res://data/sounds/ricochet.wav" id="4_mv22f"]
+[ext_resource type="AudioStream" uid="uid://bccu1a6tgmhsk" path="res://data/sounds/kick.wav" id="5_gs8dt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfipr"]
+size = Vector2(27, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uucug"]
+size = Vector2(27, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv22f"]
+size = Vector2(10, 20)
+
+[node name="Iceblock" type="CharacterBody2D" unique_id=812875192]
+z_index = 49
+collision_layer = 4
+collision_mask = 5
+floor_max_angle = 1.3962634
+floor_snap_length = 10.0
+platform_on_leave = 2
+script = ExtResource("1_mv22f")
+
+[node name="Image" type="AnimatedSprite2D" parent="." unique_id=1128999411]
+position = Vector2(-2, -6)
+sprite_frames = ExtResource("1_lmpxj")
+animation = &"walk"
+centered = false
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2084954999]
+position = Vector2(15.5, 19)
+shape = SubResource("RectangleShape2D_dfipr")
+
+[node name="TuxDetector" type="Area2D" parent="." unique_id=726561408]
+collision_layer = 8
+collision_mask = 22
+
+[node name="Collision" type="CollisionShape2D" parent="TuxDetector" unique_id=2140942907]
+position = Vector2(15.5, 19)
+shape = SubResource("RectangleShape2D_uucug")
+
+[node name="Fall" type="AudioStreamPlayer2D" parent="." unique_id=1623252069]
+stream = ExtResource("1_tdef3")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="Stomp" type="AudioStreamPlayer2D" parent="." unique_id=1447074137]
+stream = ExtResource("3_uucug")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="Ricochet" type="AudioStreamPlayer2D" parent="." unique_id=147710785]
+stream = ExtResource("4_mv22f")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="Kick" type="AudioStreamPlayer2D" parent="." unique_id=762668174]
+stream = ExtResource("5_gs8dt")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="GroundDetector" type="ShapeCast2D" parent="." unique_id=462610047]
+editor_description = "Is this actually needed? Might be able to use a normal Raycast2D. Oh whatever!"
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_mv22f")
+target_position = Vector2(0, 480)
+
+[node name="Notifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=1157257537]
+rect = Rect2(-192, -192, 416, 416)
+show_rect = false

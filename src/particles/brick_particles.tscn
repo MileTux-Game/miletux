@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bwmfa2lu3vjbw"]
+
+[ext_resource type="Texture2D" uid="uid://b50qe0cm61fse" path="res://data/images/objects/brick/brick0.png" id="1_5ou1h"]
+[ext_resource type="Script" uid="uid://ckh4lcy230r3p" path="res://src/particles/brick_particles.gd" id="1_7wg2s"]
+
+[node name="BrickParticles" type="Node2D" unique_id=782051419]
+script = ExtResource("1_7wg2s")
+
+[node name="One" type="Sprite2D" parent="." unique_id=1276180606]
+texture = ExtResource("1_5ou1h")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Two" type="Sprite2D" parent="." unique_id=1080927223]
+position = Vector2(16, 0)
+texture = ExtResource("1_5ou1h")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Three" type="Sprite2D" parent="." unique_id=1612459565]
+position = Vector2(0, 16)
+texture = ExtResource("1_5ou1h")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="Four" type="Sprite2D" parent="." unique_id=1685966454]
+position = Vector2(16, 16)
+texture = ExtResource("1_5ou1h")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="DisappearTimer" type="Timer" parent="." unique_id=1826370961]
+wait_time = 0.5
+one_shot = true
+autostart = true

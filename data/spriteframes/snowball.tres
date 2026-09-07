@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dpkby5ge8h2s0"]
+
+[ext_resource type="Texture2D" uid="uid://n10m6abrov87" path="res://data/images/creatures/snowball/squished.png" id="1_562hy"]
+[ext_resource type="Texture2D" uid="uid://b1qyvxkmf2qbw" path="res://data/images/creatures/snowball/left-0.png" id="2_d7tkh"]
+[ext_resource type="Texture2D" uid="uid://c56121doskits" path="res://data/images/creatures/snowball/left-1.png" id="3_gvtt4"]
+[ext_resource type="Texture2D" uid="uid://bah2rb11a4un4" path="res://data/images/creatures/snowball/left-2.png" id="4_a3ibm"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_562hy")
+}],
+"loop": 1,
+"name": &"squished",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d7tkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gvtt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a3ibm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gvtt4")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 8.0
+}]

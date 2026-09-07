@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cswm6fsuvvrar"]
+
+[ext_resource type="Script" uid="uid://droiwh5dicci8" path="res://src/worldmap/objects/worldmap_spawnpoint.gd" id="1_pligy"]
+
+[node name="WorldmapSpawnpoint" type="Marker2D" unique_id=925248262]
+gizmo_extents = 21.9
+script = ExtResource("1_pligy")

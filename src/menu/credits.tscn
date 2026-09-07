@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://g60g2yoxog8"]
+
+[ext_resource type="Texture2D" uid="uid://iruxavsg7ibp" path="res://data/images/menu/oiltux.jpg" id="1_3joxc"]
+[ext_resource type="Script" uid="uid://5qcx0f4kl34s" path="res://src/menu/cutscene.gd" id="1_6yh48"]
+[ext_resource type="FontFile" uid="uid://boltmv8cfep8v" path="res://data/fonts/SuperTux-Medium.ttf" id="3_kh5sd"]
+
+[node name="Credits" type="Node2D" unique_id=551078819]
+script = ExtResource("1_6yh48")
+
+[node name="Image" type="Sprite2D" parent="." unique_id=1844511950]
+texture = ExtResource("1_3joxc")
+centered = false
+
+[node name="Text" type="RichTextLabel" parent="." unique_id=1151496341]
+offset_top = 480.0
+offset_right = 640.0
+offset_bottom = 960.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 1
+theme_override_constants/paragraph_separation = 4
+theme_override_constants/shadow_outline_size = 8
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("3_kh5sd")
+bbcode_enabled = true
+text = "[font_size=32]- MileTux -[/font_size]
+Credits
+
+[font_size=24]Other People[/font_size]
+SuperTux Team (SuperTux Milestone 1 (v0.1.0-v0.1.4) and Milestone 2 (v0.3.0-v0.5.1) assets)
+Godot Developers (The Godot Engine, which was used to make this game)
+
+[font_size=24]StoneTux Developers[/font_size]
+Vaesea (Main developer)
+AnatolyStev (Some code)
+
+The other people mentioned were not involved with making this game.
+
+You made it to the end of the credits! Congratulations!
+
+Press SPACE to exit to the Main Menu."
+horizontal_alignment = 1

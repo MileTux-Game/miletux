@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bjmui4esjhxo0"]
+
+[ext_resource type="Script" uid="uid://5qcx0f4kl34s" path="res://src/menu/cutscene.gd" id="1_yfx5u"]
+[ext_resource type="Texture2D" uid="uid://md2t5n2pk33u" path="res://data/images/background/arctis.jpg" id="2_yfx5u"]
+[ext_resource type="PackedScene" uid="uid://dywa2f2fbtmh4" path="res://src/menu/text_scroll.tscn" id="3_yfx5u"]
+
+[node name="Intro" type="Node2D" unique_id=551078819]
+script = ExtResource("1_yfx5u")
+intro = true
+
+[node name="Image" type="Sprite2D" parent="." unique_id=1844511950]
+texture = ExtResource("2_yfx5u")
+centered = false
+
+[node name="Text" parent="." unique_id=1665166325 instance=ExtResource("3_yfx5u")]
+offset_top = 480.0
+offset_bottom = 960.0
+text = "[font_size=32]- Penny gets captured! -[/font_size]
+
+Tux and Penny were out having a nice picnic on the ice fields of Antarctica. Suddenly, a creature jumped out from behind an ice bush, there was a flash, and Tux fell unconscious!
+
+When Tux woke up, he found that Penny was missing. Where she lay before now lies a letter!
+
+\"Tux, my arch enemy!\", says the letter. \"I have captured your beautiful Penny and have taken her to my fortress. The path to my fortress is littered with my badguys. Give up on the thought of saving her, you haven't got a chance! -Nolok\"
+
+Tux looked and saw Nolok's fortress in the distance. Determined to save his beloved Penny, he began his journey."
+unique_scene = false

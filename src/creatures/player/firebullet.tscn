@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://7jj05vhhfjal"]
+
+[ext_resource type="SpriteFrames" uid="uid://byae4f14axyfd" path="res://data/spriteframes/firebullet.tres" id="1_2kmgl"]
+[ext_resource type="Script" uid="uid://dqesbt38u22lx" path="res://src/creatures/player/firebullet.gd" id="1_5mde7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfipr"]
+size = Vector2(10, 12)
+
+[node name="Firebullet" type="CharacterBody2D" unique_id=92464835]
+collision_layer = 1024
+collision_mask = 257
+floor_max_angle = 1.3962634
+floor_snap_length = 10.0
+script = ExtResource("1_5mde7")
+
+[node name="Image" type="AnimatedSprite2D" parent="." unique_id=1678417759]
+sprite_frames = ExtResource("1_2kmgl")
+frame_progress = 0.10937817
+centered = false
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=9132816]
+position = Vector2(8, 9)
+shape = SubResource("RectangleShape2D_dfipr")
+
+[node name="Detector" type="Area2D" parent="." unique_id=168688722]
+collision_layer = 1024
+collision_mask = 220
+
+[node name="Collision" type="CollisionShape2D" parent="Detector" unique_id=1608517986]
+position = Vector2(8, 9)
+shape = SubResource("RectangleShape2D_dfipr")
+
+[node name="Notifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=413860984]
+rect = Rect2(0, 0, 16, 16)
+show_rect = false

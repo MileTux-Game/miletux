@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://xx3kval3a5sp"]
+
+[ext_resource type="Texture2D" uid="uid://bos0u8bfpguld" path="res://data/images/powerups/fireflower/fire_flower-0.png" id="1_hysxs"]
+[ext_resource type="Texture2D" uid="uid://cufn0mi7aodff" path="res://data/images/powerups/fireflower/fire_flower-1.png" id="2_dyxy0"]
+[ext_resource type="Texture2D" uid="uid://ddabls2jglhei" path="res://data/images/powerups/fireflower/fire_flower-2.png" id="3_h8con"]
+[ext_resource type="Texture2D" uid="uid://cffgtyetx6ohk" path="res://data/images/powerups/fireflower/fire_flower-3.png" id="4_tc7b8"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hysxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dyxy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h8con")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tc7b8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_h8con")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dyxy0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]

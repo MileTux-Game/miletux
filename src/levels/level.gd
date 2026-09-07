@@ -1,0 +1,73 @@
+extends Node2D
+class_name Level
+
+@export_file("*.ogg") var music = "res://data/music/chipdisko.ogg"
+
+@export var width = 100
+
+@export var level_name = "No Name"
+@export var level_creator = "No Author"
+@export var main_spawnpoint = "main"
+
+@export var manual_camera = false
+@export var autoscroll_speed = 80
+
+const hud = preload("res://src/hud/hud.tscn")
+
+func _ready() -> void:
+	Fade.turn_invisible()
+	find_spawnpoint()
+	TuxManager.current_state = Global.tux_state
+	Music.stream = load(music)
+	Music.play()
+	Global.level_song = music
+	var hud_2 = hud.instantiate()
+	get_tree().current_scene.add_child(hud_2)
+	Global.level_width = width * Global.tile_size
+	$Camera.limit_left = 0
+	$Camera.limit_top = 0
+	$Camera.limit_bottom = 480
+	$Camera.limit_right = Global.level_width
+	if manual_camera:
+		$Camera.global_position.x = get_window().size.x * 0.5
+	else:
+		$Camera.global_position = $Tux.global_position
+	Signals.connect("level_finished", _on_level_finished)
+
+func find_spawnpoint():
+	if not Global.checkpoint_reached or Global.coins <= 25:
+		for spawn in get_tree().get_nodes_in_group("TuxSpawnpoint"):
+			if spawn.spawnpoint_name == main_spawnpoint:
+				$Tux.global_position = spawn.global_position + Vector2(13, -7)
+	else:
+		$Tux.global_position = Global.checkpoint_position - Vector2(13, -7)
+
+func _physics_process(delta: float) -> void:
+	if Global.paused:
+		return
+	
+	if not get_node_or_null("Tux") == null:
+		if not manual_camera:
+			if abs($Tux.velocity.x) > 15.0:
+				var target_look_ahead = sign($Tux.velocity.x) * $Camera.look_ahead
+				
+				#$Camera.current_look_ahead = lerp($Camera.current_look_ahead, target_look_ahead, 1.0 - exp(-2.0 * delta))
+				$Camera.current_look_ahead = move_toward($Camera.current_look_ahead, target_look_ahead, 450 * delta)
+				
+				var target_x = $Tux.global_position.x + $Camera.current_look_ahead
+				
+				$Camera.global_position.x = move_toward($Camera.global_position.x, target_x, 450 * delta)
+		else:
+			$Camera.global_position.x += autoscroll_speed * delta
+
+func _on_level_finished():
+	Global.paused = false
+	Engine.time_scale = 1.0
+	Global.tux_star_invincible = false
+	if scene_file_path not in Global.completed_levels:
+		Global.completed_levels.append(scene_file_path)
+	
+	if Global.current_worldmap == "":
+		get_tree().change_scene_to_file("res://src/menu/main_menu.tscn")
+	else:
+		get_tree().change_scene_to_file(Global.current_worldmap)

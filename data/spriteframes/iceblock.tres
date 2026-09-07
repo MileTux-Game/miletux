@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bfdlglg3yav1y"]
+
+[ext_resource type="Texture2D" uid="uid://dhp7pj03j0j6g" path="res://data/images/creatures/iceblock/flat-left.png" id="1_mwtnv"]
+[ext_resource type="Texture2D" uid="uid://cmynxihiqknhw" path="res://data/images/creatures/iceblock/left-0.png" id="2_4s5v4"]
+[ext_resource type="Texture2D" uid="uid://ccya1sxiofwhx" path="res://data/images/creatures/iceblock/left-1.png" id="3_od05l"]
+[ext_resource type="Texture2D" uid="uid://dh4ponojtesj" path="res://data/images/creatures/iceblock/left-2.png" id="4_lph2m"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mwtnv")
+}],
+"loop": 1,
+"name": &"flat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4s5v4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_od05l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lph2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_od05l")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 8.0
+}]

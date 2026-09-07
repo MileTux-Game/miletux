@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dku7ffnk0fgsl"]
+
+[ext_resource type="FontFile" uid="uid://boltmv8cfep8v" path="res://data/fonts/SuperTux-Medium.ttf" id="1_njvja"]
+[ext_resource type="Script" uid="uid://bco17gnknvaff" path="res://src/hud/worldmap_hud.gd" id="1_qxjk6"]
+
+[node name="WorldmapHUD" type="CanvasLayer" unique_id=1249095874]
+process_mode = 3
+layer = 100
+script = ExtResource("1_qxjk6")
+
+[node name="Coins" type="Label" parent="." unique_id=1231116567]
+offset_top = 4.0
+offset_right = 636.0
+offset_bottom = 52.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/font = ExtResource("1_njvja")
+theme_override_font_sizes/font_size = 18
+text = "Coins: 102594"
+horizontal_alignment = 2
+
+[node name="Level" type="Label" parent="." unique_id=198670312]
+offset_top = 416.0
+offset_right = 636.0
+offset_bottom = 480.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/font = ExtResource("1_njvja")
+theme_override_font_sizes/font_size = 18
+text = "Level"
+horizontal_alignment = 1
+vertical_alignment = 1

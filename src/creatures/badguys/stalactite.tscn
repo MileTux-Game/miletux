@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://di5a3haohncln"]
+
+[ext_resource type="Script" uid="uid://lwvou13ibvuv" path="res://src/creatures/badguys/stalactite.gd" id="1_0g7wl"]
+[ext_resource type="SpriteFrames" uid="uid://l1558xu0ty6a" path="res://data/spriteframes/stalactite.tres" id="1_7cjd1"]
+[ext_resource type="AudioStream" uid="uid://xw2sp6kfmble" path="res://data/sounds/cracking.wav" id="3_17yyb"]
+[ext_resource type="AudioStream" uid="uid://kcq34jxf7e05" path="res://data/sounds/icecrash.ogg" id="4_17yyb"]
+[ext_resource type="AudioStream" uid="uid://c1fg1cg1cdk8v" path="res://data/sounds/sizzle.ogg" id="5_13cts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfipr"]
+size = Vector2(80, 20)
+
+[sub_resource type="Animation" id="Animation_13cts"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0x6mv"]
+resource_name = "shake"
+length = 0.06666667
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Image:offset:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-5.0, 5.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fv03n"]
+_data = {
+&"RESET": SubResource("Animation_13cts"),
+&"shake": SubResource("Animation_0x6mv")
+}
+
+[node name="Stalactite" type="CharacterBody2D" unique_id=292466066]
+z_index = -1
+collision_layer = 64
+floor_max_angle = 1.3962634
+floor_snap_length = 10.0
+script = ExtResource("1_0g7wl")
+
+[node name="Image" type="AnimatedSprite2D" parent="." unique_id=608582336]
+sprite_frames = ExtResource("1_7cjd1")
+animation = &"normal"
+centered = false
+
+[node name="Collision" type="CollisionPolygon2D" parent="." unique_id=679012616]
+polygon = PackedVector2Array(26, 0, 15, 39, 6, 0)
+
+[node name="Detector" type="Area2D" parent="." unique_id=1705227533]
+collision_layer = 128
+collision_mask = 30
+
+[node name="Collision" type="CollisionPolygon2D" parent="Detector" unique_id=1424112661]
+polygon = PackedVector2Array(26, 0, 15, 39, 6, 0)
+
+[node name="Cracking" type="AudioStreamPlayer2D" parent="." unique_id=967782095]
+stream = ExtResource("3_17yyb")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="Crash" type="AudioStreamPlayer2D" parent="." unique_id=1745282151]
+stream = ExtResource("4_17yyb")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="Melt" type="AudioStreamPlayer2D" parent="." unique_id=1402692805]
+stream = ExtResource("5_13cts")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="FloorDetector" type="ShapeCast2D" parent="." unique_id=1950909157]
+position = Vector2(14, 10)
+shape = SubResource("RectangleShape2D_dfipr")
+target_position = Vector2(0, 500)
+collision_mask = 3
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=287950493]
+libraries/ = SubResource("AnimationLibrary_fv03n")

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://6o8uesduvlfb"]
+
+[ext_resource type="Script" uid="uid://cq4s2ql65lath" path="res://src/hud/hud.gd" id="1_3phq6"]
+[ext_resource type="FontFile" uid="uid://boltmv8cfep8v" path="res://data/fonts/SuperTux-Medium.ttf" id="1_t0re6"]
+
+[node name="HUD" type="CanvasLayer" unique_id=156976867]
+layer = 100
+script = ExtResource("1_3phq6")
+
+[node name="Coins" type="Label" parent="." unique_id=2040288287]
+offset_top = 4.0
+offset_right = 636.0
+offset_bottom = 52.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 6
+theme_override_fonts/font = ExtResource("1_t0re6")
+theme_override_font_sizes/font_size = 18
+text = "Coins: 102594"
+horizontal_alignment = 2

@@ -1,0 +1,27 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://qq55baeglsfb"]
+
+[ext_resource type="Texture2D" uid="uid://dvyl5ps1vatkb" path="res://data/images/creatures/flying_snowball/left-0.png" id="1_yaead"]
+[ext_resource type="Texture2D" uid="uid://bmlhpqwyrj3pd" path="res://data/images/creatures/flying_snowball/left-1.png" id="2_i4uba"]
+[ext_resource type="Texture2D" uid="uid://cdpnqjrewnpae" path="res://data/images/creatures/flying_snowball/squished-left.png" id="3_7n7x0"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yaead")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i4uba")
+}],
+"loop": 1,
+"name": &"flying",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7n7x0")
+}],
+"loop": 1,
+"name": &"squished",
+"speed": 5.0
+}]

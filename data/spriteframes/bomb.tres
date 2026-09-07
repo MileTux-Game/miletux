@@ -1,0 +1,38 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://f2tptgxbc2x0"]
+
+[ext_resource type="Texture2D" uid="uid://krb8e5ixniua" path="res://data/images/creatures/bomb/ticking-0.png" id="1_ddldy"]
+[ext_resource type="Texture2D" uid="uid://cnttxa4mqoh7j" path="res://data/images/creatures/bomb/ticking-1.png" id="2_3wkpg"]
+[ext_resource type="Texture2D" uid="uid://bbflphs2r1as0" path="res://data/images/creatures/bomb/left-0.png" id="3_f8l2x"]
+[ext_resource type="Texture2D" uid="uid://biu3rklfeoraq" path="res://data/images/creatures/bomb/left-1.png" id="4_wjlcu"]
+[ext_resource type="Texture2D" uid="uid://27gocusw8a8a" path="res://data/images/creatures/bomb/left-2.png" id="5_luwtl"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ddldy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3wkpg")
+}],
+"loop": 0,
+"name": &"ticking",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f8l2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wjlcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_luwtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wjlcu")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 8.0
+}]

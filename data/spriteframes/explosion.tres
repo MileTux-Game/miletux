@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c2mjfiolugkie"]
+
+[ext_resource type="Texture2D" uid="uid://k23sbkytoaii" path="res://data/images/creatures/explosion/explode-0.png" id="1_vb5s3"]
+[ext_resource type="Texture2D" uid="uid://d32sc3gc8ngcb" path="res://data/images/creatures/explosion/explode-1.png" id="2_d6wip"]
+[ext_resource type="Texture2D" uid="uid://cu6ugnpvjjbby" path="res://data/images/creatures/explosion/explode-2.png" id="3_hp84g"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vb5s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d6wip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hp84g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d6wip")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 15.0
+}]

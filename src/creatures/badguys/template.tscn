@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://xrdmxu5a1y3l"]
+
+[ext_resource type="AudioStream" uid="uid://bcvpy2ky5v14t" path="res://data/sounds/fall.ogg" id="3_n7usm"]
+[ext_resource type="AudioStream" uid="uid://clo07kourcwdd" path="res://data/sounds/squish.wav" id="4_cn8sf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfipr"]
+size = Vector2(28, 28)
+
+[node name="Template" type="CharacterBody2D" unique_id=812875192]
+z_index = 49
+collision_layer = 4
+collision_mask = 5
+floor_max_angle = 1.3962634
+floor_snap_length = 10.0
+platform_on_leave = 2
+
+[node name="Image" type="AnimatedSprite2D" parent="." unique_id=1128999411]
+position = Vector2(-3, -4)
+animation = &""
+centered = false
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2084954999]
+position = Vector2(16, 18)
+shape = SubResource("RectangleShape2D_dfipr")
+
+[node name="TuxDetector" type="Area2D" parent="." unique_id=726561408]
+collision_layer = 8
+collision_mask = 18
+
+[node name="Collision" type="CollisionShape2D" parent="TuxDetector" unique_id=2140942907]
+position = Vector2(16, 18)
+shape = SubResource("RectangleShape2D_dfipr")
+
+[node name="Fall" type="AudioStreamPlayer2D" parent="." unique_id=1623252069]
+stream = ExtResource("3_n7usm")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="Squish" type="AudioStreamPlayer2D" parent="." unique_id=1447074137]
+stream = ExtResource("4_cn8sf")
+max_distance = 1280.0
+panning_strength = 3.0
+
+[node name="Enabler" type="VisibleOnScreenEnabler2D" parent="." unique_id=36567572]
+rect = Rect2(-192, -192, 416, 416)

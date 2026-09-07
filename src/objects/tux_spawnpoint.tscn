@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b340k12byw0ja"]
+
+[ext_resource type="Script" uid="uid://cpqvwn2p74r6w" path="res://src/objects/tux_spawnpoint.gd" id="1_u5kit"]
+
+[node name="TuxSpawnpoint" type="Marker2D" unique_id=1156520866]
+gizmo_extents = 15.0
+script = ExtResource("1_u5kit")

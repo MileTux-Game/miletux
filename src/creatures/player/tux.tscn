@@ -1,0 +1,227 @@
+[gd_scene format=3 uid="uid://33idnohaw00u"]
+
+[ext_resource type="SpriteFrames" uid="uid://cyy3yin3h2rm4" path="res://data/spriteframes/tux.tres" id="1_4xvm0"]
+[ext_resource type="Script" uid="uid://d3rklxr8iejsa" path="res://src/creatures/player/tux.gd" id="1_fjqv6"]
+[ext_resource type="SpriteFrames" uid="uid://6pxmocdwdw4" path="res://data/spriteframes/tux_fire.tres" id="2_5ut1p"]
+[ext_resource type="Texture2D" uid="uid://cp0gu44r44dcc" path="res://data/images/particles/sparkle.png" id="2_32n8q"]
+[ext_resource type="AudioStream" uid="uid://c1w8pejh412lj" path="res://data/sounds/hurt.wav" id="2_wc54n"]
+[ext_resource type="SpriteFrames" uid="uid://4f1uyfoylgq7" path="res://data/spriteframes/tux_big.tres" id="2_y7fy8"]
+[ext_resource type="AudioStream" uid="uid://cmlgta5o4c0jo" path="res://data/sounds/jump.wav" id="3_8fxd1"]
+[ext_resource type="AudioStream" uid="uid://d0y2rg2w5hesq" path="res://data/sounds/bigjump.wav" id="4_if8nq"]
+[ext_resource type="AudioStream" uid="uid://c2gw3k6q1y7qh" path="res://data/sounds/skid.wav" id="5_twha0"]
+[ext_resource type="AudioStream" uid="uid://c281lvk5w3gw" path="res://data/sounds/fire-flower.wav" id="6_fjqv6"]
+[ext_resource type="AudioStream" uid="uid://du0i7g6lpdsrc" path="res://data/sounds/excellent.ogg" id="7_y7fy8"]
+[ext_resource type="AudioStream" uid="uid://vmp3u1wqqth0" path="res://data/sounds/shoot.wav" id="10_msosx"]
+[ext_resource type="AudioStream" uid="uid://0yndff4xgris" path="res://data/sounds/star.wav" id="13_ji878"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ylpwo"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_ji878"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_32n8q"]
+curve = SubResource("Curve_ji878")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_32n8q"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1, 8, 0)
+emission_shape_scale = Vector3(16, 32, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.75
+scale_max = 0.75
+alpha_curve = SubResource("CurveTexture_32n8q")
+anim_offset_max = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfipr"]
+size = Vector2(28, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptb2r"]
+size = Vector2(28, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jl100"]
+size = Vector2(28, 5)
+
+[sub_resource type="Animation" id="Animation_5ut1p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireImage:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BigImage:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SmallImage:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_msosx"]
+resource_name = "flicker"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FireImage:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1.0, 0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BigImage:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1.0, 0.0, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SmallImage:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1.0, 0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_32n8q"]
+_data = {
+&"RESET": SubResource("Animation_5ut1p"),
+&"flicker": SubResource("Animation_msosx")
+}
+
+[node name="Tux" type="CharacterBody2D" unique_id=345015657]
+z_index = 50
+collision_layer = 2
+collision_mask = 257
+floor_max_angle = 1.3962634
+floor_snap_length = 10.0
+platform_on_leave = 2
+script = ExtResource("1_fjqv6")
+
+[node name="Stars" type="GPUParticles2D" parent="." unique_id=1967267127]
+z_index = 1
+material = SubResource("CanvasItemMaterial_ylpwo")
+emitting = false
+amount = 16
+texture = ExtResource("2_32n8q")
+preprocess = 2.0
+visibility_rect = Rect2(-48, -32, 100, 80)
+process_material = SubResource("ParticleProcessMaterial_32n8q")
+
+[node name="FireImage" type="AnimatedSprite2D" parent="." unique_id=264736650]
+visible = false
+sprite_frames = ExtResource("2_5ut1p")
+animation = &"stand"
+
+[node name="BigImage" type="AnimatedSprite2D" parent="." unique_id=921948789]
+visible = false
+sprite_frames = ExtResource("2_y7fy8")
+animation = &"stand"
+
+[node name="SmallImage" type="AnimatedSprite2D" parent="." unique_id=1111593641]
+position = Vector2(0, 16)
+sprite_frames = ExtResource("1_4xvm0")
+animation = &"stand"
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=440094833]
+position = Vector2(0.5, 25.5)
+shape = SubResource("RectangleShape2D_dfipr")
+
+[node name="Stomp" type="Area2D" parent="." unique_id=1788485541]
+collision_layer = 2
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stomp" unique_id=47124505]
+position = Vector2(0.5, 40.5)
+shape = SubResource("RectangleShape2D_ptb2r")
+
+[node name="CeilingDetector" type="Area2D" parent="." unique_id=1259850446]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CeilingDetector" unique_id=1170649072]
+position = Vector2(0.5, 9.5)
+shape = SubResource("RectangleShape2D_jl100")
+
+[node name="Hurt" type="AudioStreamPlayer" parent="." unique_id=617722012]
+stream = ExtResource("2_wc54n")
+
+[node name="SmallJump" type="AudioStreamPlayer" parent="." unique_id=640672579]
+stream = ExtResource("3_8fxd1")
+
+[node name="BigJump" type="AudioStreamPlayer" parent="." unique_id=1446592047]
+stream = ExtResource("4_if8nq")
+
+[node name="Skid" type="AudioStreamPlayer" parent="." unique_id=304415024]
+stream = ExtResource("5_twha0")
+
+[node name="FireFlower" type="AudioStreamPlayer" parent="." unique_id=723111133]
+stream = ExtResource("6_fjqv6")
+
+[node name="Bullet" type="AudioStreamPlayer" parent="." unique_id=345532933]
+stream = ExtResource("10_msosx")
+
+[node name="Excellent" type="AudioStreamPlayer" parent="." unique_id=492208248]
+stream = ExtResource("7_y7fy8")
+
+[node name="Star" type="AudioStreamPlayer" parent="." unique_id=1896341377]
+stream = ExtResource("13_ji878")
+volume_db = -2.245
+
+[node name="TileTimer" type="Timer" parent="." unique_id=717228430]
+wait_time = 0.08
+one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=1787001419]
+wait_time = 0.17
+one_shot = true
+
+[node name="StarTimer" type="Timer" parent="." unique_id=1329309702]
+wait_time = 10.0
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=500614835]
+libraries/ = SubResource("AnimationLibrary_32n8q")

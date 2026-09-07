@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bvxkje6joefsq"]
+
+[ext_resource type="Script" uid="uid://b47iff4leqs5p" path="res://src/transition/fade.gd" id="1_x58fc"]
+
+[sub_resource type="Animation" id="Animation_oxocu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rect:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_x58fc"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rect:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_pibow"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rect:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_l6ey5"]
+resource_name = "invisible"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rect:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l6ey5"]
+_data = {
+&"RESET": SubResource("Animation_oxocu"),
+&"fade_in": SubResource("Animation_x58fc"),
+&"fade_out": SubResource("Animation_pibow"),
+&"invisible": SubResource("Animation_l6ey5")
+}
+
+[node name="Fade" type="CanvasLayer" unique_id=517672867]
+layer = 999
+script = ExtResource("1_x58fc")
+
+[node name="Rect" type="ColorRect" parent="." unique_id=694075428]
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)
+
+[node name="Animation" type="AnimationPlayer" parent="." unique_id=1207651521]
+libraries/ = SubResource("AnimationLibrary_l6ey5")

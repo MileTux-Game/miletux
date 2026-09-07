@@ -1,0 +1,47 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c2qkmn1p7vqk4"]
+
+[ext_resource type="Texture2D" uid="uid://b2lk20g1wgly3" path="res://data/images/objects/checkpoints/bell-m.png" id="1_yr8h2"]
+[ext_resource type="Texture2D" uid="uid://bnk1p4d5ae85b" path="res://data/images/objects/checkpoints/bell-l_0.png" id="2_p4adt"]
+[ext_resource type="Texture2D" uid="uid://c2fqob5h5211j" path="res://data/images/objects/checkpoints/bell-l.png" id="3_1qcp2"]
+[ext_resource type="Texture2D" uid="uid://bnr3y6v6gpied" path="res://data/images/objects/checkpoints/bell-r_0.png" id="4_03t7t"]
+[ext_resource type="Texture2D" uid="uid://dfvgqhxf4218g" path="res://data/images/objects/checkpoints/bell-r.png" id="5_vc70k"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yr8h2")
+}],
+"loop": 0,
+"name": &"normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p4adt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1qcp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p4adt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yr8h2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_03t7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vc70k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_03t7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_yr8h2")
+}],
+"loop": 1,
+"name": &"ring",
+"speed": 10.0
+}]

@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://l1558xu0ty6a"]
+
+[ext_resource type="Texture2D" uid="uid://cd723ssvqph2n" path="res://data/images/creatures/stalactite/broken.png" id="1_01dd2"]
+[ext_resource type="Texture2D" uid="uid://cii28q2mdkppx" path="res://data/images/creatures/stalactite/falling.png" id="2_kge52"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_01dd2")
+}],
+"loop": 1,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kge52")
+}],
+"loop": 1,
+"name": &"normal",
+"speed": 5.0
+}]

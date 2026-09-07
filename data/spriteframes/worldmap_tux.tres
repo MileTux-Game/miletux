@@ -1,0 +1,54 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dy0ow6nwg5jta"]
+
+[ext_resource type="Texture2D" uid="uid://cog4oysvit1tr" path="res://data/images/worldmap/common/tux/normal/smalltux.png" id="1_sps6s"]
+[ext_resource type="Texture2D" uid="uid://cbh63gjhf8krn" path="res://data/images/worldmap/common/tux/normal/smalltux1.png" id="2_e3fe8"]
+[ext_resource type="Texture2D" uid="uid://duh130uyif3qv" path="res://data/images/worldmap/common/tux/normal/smalltux2.png" id="3_d35oi"]
+[ext_resource type="Texture2D" uid="uid://bhe1lja7bskdf" path="res://data/images/worldmap/common/tux/normal/smalltux3.png" id="4_bexcd"]
+[ext_resource type="Texture2D" uid="uid://dmvcwkgt6u4aj" path="res://data/images/worldmap/common/tux/normal/smalltux4.png" id="5_1e3cx"]
+[ext_resource type="Texture2D" uid="uid://y6jpp4oftdgk" path="res://data/images/worldmap/common/tux/normal/smalltux5.png" id="6_1h8kk"]
+[ext_resource type="Texture2D" uid="uid://ctwcdmuf0ifbu" path="res://data/images/worldmap/common/tux/normal/smalltux6.png" id="7_3vhlo"]
+[ext_resource type="Texture2D" uid="uid://bdbtmma5hgssj" path="res://data/images/worldmap/common/tux/normal/smalltux7.png" id="8_urnit"]
+[ext_resource type="Texture2D" uid="uid://b32m0csxv6ifb" path="res://data/images/worldmap/common/tux/normal/smalltux8.png" id="9_i3y02"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sps6s")
+}],
+"loop": 1,
+"name": &"stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_e3fe8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d35oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bexcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1e3cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1h8kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3vhlo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_urnit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i3y02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_sps6s")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 10.0
+}]
