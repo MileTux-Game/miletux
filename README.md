@@ -6,7 +6,7 @@ MileTux is a jump'n'run game meant to recreate old SuperTux's feel, using the ol
 
 Run and jump through multiple worlds, fighing off enemies by jumping on them, bumping them from below or tossing objects at them, grabbing power-ups and other stuff on the way.
 
-While it's not intended to be completely accurate to SuperTux, it's meant to recreate the "feel" of old SuperTux.
+While it's not intended to be completely accurate to SuperTux, it's meant to recreate the "feel" of old SuperTux, although it will be somewhat different in certain ways.
 
 ## Story: Penny gets captured!
 Tux and Penny were out having a nice picnic on the ice fields of Antarctica. Suddenly, a creature jumped from behind an ice bush, there was a flash, and Tux fell unconscious!
@@ -16,10 +16,11 @@ When Tux wakes up, he finds that Penny is missing. Where she lay before now lies
 Tux looks and sees Nolok's fortress in the distance. Determined to save his beloved Penny, he begins his journey.
 
 ## Documentation
-Important documentation for MileTux is located in the GitHub Wiki (https://github.com/MileTux-Game/miletux/wiki) for Players, Developers and Modders! You can read those if you want.
+Important documentation for MileTux is located in the wiki (https://miletux.miraheze.org/wiki/Main_Page) for Players, Developers and Modders! You can read those if you want.
 
 ## Running the game
-Currently, there is no compiled release for this game. You can still run the game though, see the GitHub Wiki for more information.
+Currently, there is no compiled release for this game. You can still run the game though by simply loading the project.godot file in Godot 4.7.2 and playing the
+game that way.
 
 ## Playing the game
 Currently, only keyboards are supported. You can't change the controls via the Options menu yet, but you will be able to later. Basically, the only keys you will need to use in-game are to do the following actions: jump, duck, right, left and action. There isn't much to tell about the first few, but the "action" key allows you to pick up objects and use any powerup you got. For instance, with the fire flower, you can shoot fireballs, or with the ice flower fire ice pellets.
@@ -34,4 +35,4 @@ Development on Milestone 1 has started, but it's nowhere near finished yet.
 ## The End
 Thanks for trying out MileTux.
 
--- Vaesea
+-- MileTux Developers
