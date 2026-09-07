@@ -72,3 +72,15 @@ func spawn_item(_direction:ItemDirections):
 		spawn_coin()
 	else:
 		print("Can't do that.")
+
+func spawn_brick_particles():
+	if Global.paused:
+		return
+	
+	var brick_particles = brick_particles_scene.instantiate()
+	
+	if snow:
+		brick_particles.snow = true
+	
+	get_tree().current_scene.call_deferred("add_child", brick_particles)
+	brick_particles.global_position = self.global_position

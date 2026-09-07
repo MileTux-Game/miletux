@@ -155,6 +155,7 @@ func spawn_fire_flower():
 	fire_flower.position = self.position
 	fire_flower.call_deferred("spawn_from_block")
 
+# TODO: Fully move this out of this script as Brick Block overrides it for the snow variable!!!!
 func spawn_brick_particles():
 	if Global.paused:
 		return
