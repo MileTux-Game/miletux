@@ -85,7 +85,7 @@ max_distance = 1280.0
 panning_strength = 3.0
 
 [node name="FloorDetector" type="ShapeCast2D" parent="." unique_id=1950909157]
-position = Vector2(14, 10)
+position = Vector2(16, 10)
 shape = SubResource("RectangleShape2D_dfipr")
 target_position = Vector2(0, 500)
 collision_mask = 3

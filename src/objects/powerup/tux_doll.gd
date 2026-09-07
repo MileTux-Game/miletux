@@ -28,6 +28,7 @@ func _on_something_detected(body):
 	
 	if body.is_in_group("Player") and not body.dead:
 		Global.coins += 100
+		Signals.coin_collected.emit()
 		$Image.visible = false
 		$Life.play()
 	
