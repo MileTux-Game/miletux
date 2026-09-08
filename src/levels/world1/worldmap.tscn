@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c186xegtqf65" path="res://src/levels/world1/levels/01-welcome_antarctica.tscn" id="6_571my"]
 [ext_resource type="PackedScene" uid="uid://ctvi4lqlrbjlr" path="res://src/worldmap/objects/rock.tscn" id="7_0cvpb"]
 [ext_resource type="PackedScene" uid="uid://csl2wa71hbame" path="res://src/levels/world1/levels/02-the_journey_begins.tscn" id="7_rngy7"]
+[ext_resource type="PackedScene" uid="uid://bhf7h2oabsfyl" path="res://src/levels/world1/levels/03-via_nostalgica.tscn" id="8_ataof"]
 
 [node name="Worldmap" type="Node2D" unique_id=1039099861]
 process_mode = 3
@@ -29,7 +30,7 @@ tile_map_data = PackedByteArray("AAASAEcAAAAFAAUAAAASAEgAAAAFAAYAAAASAEkAAAAFAAY
 tile_set = ExtResource("2_rngy7")
 
 [node name="WorldmapTux" parent="." unique_id=514467908 instance=ExtResource("3_ataof")]
-position = Vector2(512, 1952)
+position = Vector2(32, 2016)
 
 [node name="MainWorldmapSpawnPoint" parent="." unique_id=925248262 instance=ExtResource("4_ae63i")]
 position = Vector2(512, 2368)
@@ -45,9 +46,19 @@ level_scene = ExtResource("7_rngy7")
 level_name = "The Journey Begins"
 level_section = 2
 
+[node name="Level3" parent="." unique_id=1304460796 instance=ExtResource("5_bjpkc")]
+position = Vector2(512, 1984)
+level_scene = ExtResource("8_ataof")
+level_name = "Via Nostalgica"
+level_section = 3
+
 [node name="Rock" parent="." unique_id=1794535317 instance=ExtResource("7_0cvpb")]
 position = Vector2(512, 2112)
 
 [node name="Rock2" parent="." unique_id=894822292 instance=ExtResource("7_0cvpb")]
 position = Vector2(512, 2048)
 rock_section = 2
+
+[node name="Rock3" parent="." unique_id=463516132 instance=ExtResource("7_0cvpb")]
+position = Vector2(512, 1280)
+rock_section = 3
