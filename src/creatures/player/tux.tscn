@@ -24,7 +24,7 @@ particles_anim_loop = false
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_32n8q"]
+[sub_resource type="CurveTexture" id="CurveTexture_ji878"]
 curve = SubResource("Curve_ji878")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_32n8q"]
@@ -36,7 +36,7 @@ emission_box_extents = Vector3(1, 1, 1)
 gravity = Vector3(0, 0, 0)
 scale_min = 0.75
 scale_max = 0.75
-alpha_curve = SubResource("CurveTexture_32n8q")
+alpha_curve = SubResource("CurveTexture_ji878")
 anim_offset_max = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfipr"]
@@ -221,7 +221,8 @@ wait_time = 0.17
 one_shot = true
 
 [node name="StarTimer" type="Timer" parent="." unique_id=1329309702]
-wait_time = 10.0
+wait_time = 12.0
+one_shot = true
 
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=500614835]
 libraries/ = SubResource("AnimationLibrary_32n8q")

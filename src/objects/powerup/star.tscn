@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://8kjlp24tl2s4"]
+
+[ext_resource type="SpriteFrames" uid="uid://br75oq8m6owt0" path="res://data/spriteframes/star.tres" id="1_0twcf"]
+[ext_resource type="Script" uid="uid://of8tr3ybdc67" path="res://src/objects/powerup/star.gd" id="1_tuhwm"]
+[ext_resource type="Texture2D" uid="uid://cp0gu44r44dcc" path="res://data/images/particles/sparkle.png" id="2_bckb3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_snpai"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_hnwbr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_32n8q"]
+curve = SubResource("Curve_hnwbr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3ck6n"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(16, 16, 0)
+emission_shape_scale = Vector3(16, 8, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.75
+scale_max = 0.75
+alpha_curve = SubResource("CurveTexture_32n8q")
+anim_offset_max = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfipr"]
+size = Vector2(32, 32)
+
+[node name="Star" type="CharacterBody2D" unique_id=1211242112]
+collision_layer = 512
+collision_mask = 257
+script = ExtResource("1_tuhwm")
+
+[node name="Stars" type="GPUParticles2D" parent="." unique_id=860061092]
+z_index = 1
+material = SubResource("CanvasItemMaterial_snpai")
+emitting = false
+texture = ExtResource("2_bckb3")
+visibility_rect = Rect2(-100, 100, 100, 100)
+process_material = SubResource("ParticleProcessMaterial_3ck6n")
+
+[node name="Image" type="AnimatedSprite2D" parent="." unique_id=1263794809]
+sprite_frames = ExtResource("1_0twcf")
+centered = false
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1254208061]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_dfipr")
+
+[node name="Detector" type="Area2D" parent="." unique_id=695969223]
+collision_layer = 512
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="Detector" unique_id=814693715]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_dfipr")

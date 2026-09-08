@@ -53,7 +53,7 @@ position = Vector2(-32, -64)
 [node name="Camera" parent="." unique_id=1917637807 instance=ExtResource("5_oj1mm")]
 
 [node name="TuxSpawnpoint" parent="." unique_id=1156520866 instance=ExtResource("6_jdx2d")]
-position = Vector2(96, 256)
+position = Vector2(3936, 256)
 
 [node name="BonusBlock" parent="." unique_id=368355438 instance=ExtResource("7_4d1fs")]
 position = Vector2(640, 320)
@@ -95,6 +95,7 @@ position = Vector2(5408, 288)
 
 [node name="BonusBlock20" parent="." unique_id=74222691 instance=ExtResource("7_4d1fs")]
 position = Vector2(4032, 160)
+content = 3
 
 [node name="BonusBlock10" parent="." unique_id=1654543561 instance=ExtResource("7_4d1fs")]
 position = Vector2(3072, 192)

@@ -50,7 +50,7 @@ func _on_tux_detector_area_entered(area):
 				area.get_parent().stomp_bounce()
 				death_squish()
 			else:
-				death_squish()
+				death_fall(false)
 
 func _on_tux_detector_body_entered(body):
 	if Global.paused:

@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 128
+# Forgot to mention this code is from the (currently-unreleased) game I'm working on named Tux Mystery.
+
+@export var speed = 192
 
 var current_state:TuxManager.TuxStates
 

@@ -53,7 +53,10 @@ func _on_tux_detector_body_entered(body):
 		return
 	
 	if body.is_in_group("Player"):
-		held_badguy_check(false, body)
+		if not Global.tux_star_invincible:
+			held_badguy_check(false, body)
+		else:
+			death_fall(false)
 	if body.is_in_group("Badguy"):
 		if not body == self:
 			if body.kill_other_enemies:

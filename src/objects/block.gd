@@ -22,6 +22,7 @@ const coin_scene = preload("res://src/objects/coin.tscn")
 const egg_scene = preload("res://src/objects/powerup/egg.tscn")
 const ff_scene = preload("res://src/objects/powerup/fire_flower.tscn")
 const td_scene = preload("res://src/objects/powerup/tux_doll.tscn")
+const star_scene = preload("res://src/objects/powerup/star.tscn")
 
 const brick_particles_scene = preload("res://src/particles/brick_particles.tscn")
 
@@ -123,7 +124,14 @@ func spawn_item(direction:ItemDirections):
 			else:
 				tux_doll.direction = 1
 		3: # Star
-			pass
+			var star = star_scene.instantiate()
+			get_tree().current_scene.call_deferred("add_child", star)
+			$Upgrade.play()
+			star.global_position = self.global_position - Vector2(0, 32)
+			if direction == ItemDirections.LEFT:
+				star.call_deferred("spawn_from_block", -1)
+			else:
+				star.call_deferred("spawn_from_block", 1)
 
 func _on_bump_finished(anim_name:StringName):
 	if Global.paused:
