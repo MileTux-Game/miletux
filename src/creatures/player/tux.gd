@@ -93,6 +93,8 @@ func _physics_process(delta: float) -> void:
 	if not Global.paused:
 		if (not is_on_floor() and $TileTimer.is_stopped()) or dead: # If Tux isn't on the floor, the tile timer isn't going or Tux is dead, add gravity!
 			velocity += get_gravity() * delta
+		elif (not is_on_floor() and in_cutscene):
+			velocity += get_gravity() * delta # HACK fix for end goals
 	else:
 		velocity.y = 0
 	

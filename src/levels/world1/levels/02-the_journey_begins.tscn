@@ -53,7 +53,7 @@ position = Vector2(-32, -64)
 [node name="Camera" parent="." unique_id=1917637807 instance=ExtResource("5_oj1mm")]
 
 [node name="TuxSpawnpoint" parent="." unique_id=1156520866 instance=ExtResource("6_jdx2d")]
-position = Vector2(3936, 256)
+position = Vector2(96, 256)
 
 [node name="BonusBlock" parent="." unique_id=368355438 instance=ExtResource("7_4d1fs")]
 position = Vector2(640, 320)
