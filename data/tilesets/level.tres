@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bchnm6aoeq583" path="res://data/images/tiles/goal/pole_sheet.png" id="6_ylpwo"]
 [ext_resource type="Texture2D" uid="uid://chw18rs58xai1" path="res://data/images/tiles/misc/signs.png" id="7_lqmno"]
 [ext_resource type="Texture2D" uid="uid://rv8ytytuiycu" path="res://data/images/tiles/goal/igloo.png" id="8_owuhm"]
+[ext_resource type="Texture2D" uid="uid://bh46ir5c4cme8" path="res://data/images/tiles/water/water-transparent.png" id="9_mom4q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fhf2x"]
 resource_name = "Snow Main"
@@ -379,6 +380,20 @@ texture_region_size = Vector2i(32, 32)
 9:5/0 = 0
 10:5/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_162jq"]
+texture = ExtResource("9_mom4q")
+texture_region_size = Vector2i(32, 32)
+0:0/animation_speed = 10.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/0 = 0
+0:1/animation_speed = 10.0
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/0 = 0
+
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
@@ -390,3 +405,4 @@ sources/3 = SubResource("TileSetAtlasSource_ylpwo")
 sources/4 = SubResource("TileSetAtlasSource_lqmno")
 sources/5 = SubResource("TileSetAtlasSource_owuhm")
 sources/6 = SubResource("TileSetAtlasSource_mom4q")
+sources/7 = SubResource("TileSetAtlasSource_162jq")

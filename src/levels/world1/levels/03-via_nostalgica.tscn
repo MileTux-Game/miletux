@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dyxgmjr08l70p" path="res://src/creatures/badguys/iceblock.tscn" id="11_28xo8"]
 [ext_resource type="PackedScene" uid="uid://b1wiuw82ovibs" path="res://src/creatures/badguys/bomb.tscn" id="12_hgm6f"]
 [ext_resource type="PackedScene" uid="uid://mltexe5nfxge" path="res://src/creatures/badguys/bouncing_snowball.tscn" id="13_rbtao"]
+[ext_resource type="PackedScene" uid="uid://cgevbinru2wi2" path="res://src/objects/checkpoint.tscn" id="14_28xo8"]
 
 [node name="VN" type="Node2D" unique_id=131155539]
 script = ExtResource("1_fd74k")
@@ -318,3 +319,6 @@ position = Vector2(10575, 416)
 
 [node name="Snowball17" parent="." unique_id=345124740 instance=ExtResource("10_20n2k")]
 position = Vector2(10933, 416)
+
+[node name="Checkpoint" parent="." unique_id=1199848333 instance=ExtResource("14_28xo8")]
+position = Vector2(6456, 224)

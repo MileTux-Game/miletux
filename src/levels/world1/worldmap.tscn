@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ctvi4lqlrbjlr" path="res://src/worldmap/objects/rock.tscn" id="7_0cvpb"]
 [ext_resource type="PackedScene" uid="uid://csl2wa71hbame" path="res://src/levels/world1/levels/02-the_journey_begins.tscn" id="7_rngy7"]
 [ext_resource type="PackedScene" uid="uid://bhf7h2oabsfyl" path="res://src/levels/world1/levels/03-via_nostalgica.tscn" id="8_ataof"]
+[ext_resource type="PackedScene" uid="uid://15qaek1vvtlp" path="res://src/levels/world1/levels/04-tobgle_road.tscn" id="9_ae63i"]
 
 [node name="Worldmap" type="Node2D" unique_id=1039099861]
 process_mode = 3
@@ -50,6 +51,12 @@ level_section = 2
 position = Vector2(512, 1984)
 level_scene = ExtResource("8_ataof")
 level_name = "Via Nostalgica"
+level_section = 3
+
+[node name="Level4" parent="." unique_id=278043542 instance=ExtResource("5_bjpkc")]
+position = Vector2(640, 1792)
+level_scene = ExtResource("9_ae63i")
+level_name = "Tobgle Road"
 level_section = 3
 
 [node name="Rock" parent="." unique_id=1794535317 instance=ExtResource("7_0cvpb")]

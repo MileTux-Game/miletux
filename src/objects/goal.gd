@@ -2,7 +2,7 @@ extends Area2D
 
 @export_enum("End Sequence", "Stop Tux") var type = 0
 @export_file("*.ogg") var leveldone_song = "res://data/music/leveldone.ogg"
-@export var leveldone_length = 7.71
+@export var leveldone_length = 7.68
 
 func _ready() -> void:
 	connect("body_entered", _on_something_detected)
