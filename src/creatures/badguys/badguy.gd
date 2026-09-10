@@ -20,7 +20,7 @@ var current_state = BadguyStates.ALIVE
 @export var speed = 80
 @export var death_time = 2
 
-var kill_other_enemies = true
+var kill_other_enemies = false # I'm an idiot
 var kill_self_on_touching_enemy = false
 
 var was_on_wall = false

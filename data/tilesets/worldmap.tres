@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dl3xvvd0uj17l" path="res://data/images/worldmap/ice/normal.png" id="1_l6mgv"]
 [ext_resource type="Texture2D" uid="uid://dx8vowcljw2mk" path="res://data/images/worldmap/shared/path.png" id="2_r6vw0"]
 [ext_resource type="Texture2D" uid="uid://bm0m704jmtcbx" path="res://data/images/worldmap/shared/water.png" id="3_fclgl"]
+[ext_resource type="Texture2D" uid="uid://ljscv2xff22a" path="res://data/images/worldmap/shared/shallow_water.png" id="4_r6vw0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rca1i"]
+resource_name = "Snow"
 texture = ExtResource("1_l6mgv")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -196,6 +198,7 @@ texture_region_size = Vector2i(32, 32)
 14:8/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x2s5j"]
+resource_name = "Path"
 texture = ExtResource("2_r6vw0")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -260,9 +263,30 @@ texture_region_size = Vector2i(32, 32)
 3:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cqs4j"]
+resource_name = "Water"
 texture = ExtResource("3_fclgl")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fclgl"]
+resource_name = "Shallow Water"
+texture = ExtResource("4_r6vw0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
 
 [resource]
 tile_size = Vector2i(32, 32)
@@ -270,3 +294,4 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rca1i")
 sources/1 = SubResource("TileSetAtlasSource_x2s5j")
 sources/2 = SubResource("TileSetAtlasSource_cqs4j")
+sources/3 = SubResource("TileSetAtlasSource_fclgl")

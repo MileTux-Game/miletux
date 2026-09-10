@@ -150,6 +150,8 @@ size = Vector2(32, 1)
 
 [node name="BrickBlock" type="StaticBody2D" unique_id=368355438]
 z_index = 2
+collision_layer = 256
+collision_mask = 1630
 script = ExtResource("1_1tyf5")
 
 [node name="Image" type="AnimatedSprite2D" parent="." unique_id=1376034192]
@@ -173,7 +175,7 @@ libraries/ = SubResource("AnimationLibrary_xl6vq")
 
 [node name="DetectorLeft" type="Area2D" parent="." unique_id=143570671]
 collision_layer = 256
-collision_mask = 2
+collision_mask = 28
 
 [node name="Collision" type="CollisionShape2D" parent="DetectorLeft" unique_id=1396700121]
 position = Vector2(-0.5, 16)

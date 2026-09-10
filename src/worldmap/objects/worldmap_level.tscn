@@ -8,6 +8,7 @@ radius = 9.0
 
 [node name="Level" type="AnimatedSprite2D" unique_id=1440158541]
 process_mode = 3
+z_index = 49
 sprite_frames = ExtResource("1_i2bb4")
 animation = &"red"
 frame_progress = 1.0

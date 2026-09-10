@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 		kill_other_enemies = true
 		kill_self_on_touching_enemy = true
 		set_collision_mask_value(1, false)
-		set_collision_layer_value(9, false)
+		set_collision_mask_value(9, false)
 		set_collision_layer_value(3, false)
 		set_collision_mask_value(3, false)
 		set_collision_layer_value(5, true)

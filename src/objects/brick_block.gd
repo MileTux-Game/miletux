@@ -64,11 +64,51 @@ func _on_dd_body_entered(body):
 					bump = true
 					detect_enemies()
 
+func _on_dl_body_entered(body):
+	if Global.paused or Engine.is_editor_hint():
+		return
+	
+	if body.is_in_group("Badguy"):
+		if body.kill_other_enemies and not body.current_iceblock_state == body.IceblockStates.HELD:
+			$BrickSound.play()
+			
+			if empty_brick:
+				$Animation.play("up_gone")
+				bump = true
+				detect_enemies()
+			else:
+				if how_many_hits > 0:
+					$Animation.play("up_down")
+					how_many_hits -= 1
+					spawn_item(ItemDirections.LEFT)
+					bump = true
+					detect_enemies()
+
+func _on_dr_body_entered(body):
+	if Global.paused or Engine.is_editor_hint():
+		return
+	
+	if body.is_in_group("Badguy"):
+		if body.kill_other_enemies and not body.current_iceblock_state == body.IceblockStates.HELD:
+			$BrickSound.play()
+			
+			if empty_brick:
+				$Animation.play("up_gone")
+				bump = true
+				detect_enemies()
+			else:
+				if how_many_hits > 0:
+					$Animation.play("up_down")
+					how_many_hits -= 1
+					spawn_item(ItemDirections.LEFT)
+					bump = true
+					detect_enemies()
+
 func spawn_item(_direction:ItemDirections):
 	if Global.paused:
 		return
 	
-	if content == 0:
+	if content == 0: # Coin
 		spawn_coin()
 	else:
 		print("Can't do that.")

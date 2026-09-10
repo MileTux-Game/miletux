@@ -50,7 +50,8 @@ func _on_dd_body_entered(body):
 	elif body.is_in_group("Player") and empty and body.velocity.y >= 0 and not body.dead:
 		$BrickSound.play()
 	
-	if body.is_in_group("Badguy") and not empty and body.kill_other_enemies: # nooooooo it's duplicated code!!!!
+	# TODO: Add to brick
+	if body.is_in_group("Badguy") and not empty and body.kill_other_enemies and not body.current_iceblock_state == body.IceblockStates.HELD: # nooooooo it's duplicated code!!!! and long if statement!!!!
 		turn_empty("up_down")
 		if body.global_position.x < global_position.x + 16:
 			spawn_item(ItemDirections.RIGHT)

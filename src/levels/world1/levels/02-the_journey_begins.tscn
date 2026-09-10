@@ -17,6 +17,7 @@
 
 [node name="TJB" type="Node2D" unique_id=131155539]
 script = ExtResource("1_864ip")
+music = "uid://dj0d1nai0lb2g"
 width = 301
 level_name = "The Journey Begins"
 level_creator = "SuperTux Team"
