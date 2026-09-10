@@ -195,14 +195,19 @@ func move():
 	was_on_floor = is_on_floor()
 	
 	# If player is pressing the "action" action, give Tux the ability to run. If player isn't doing that, stop Tux from being able to run.
-	if Input.is_action_pressed("player_action"):
-		speed = run_speed
-		instant_speed = instant_run_speed
-		current_acceleration = run_acceleration
-	else:
-		speed = walk_speed
-		instant_speed = instant_walk_speed
-		current_acceleration = walk_acceleration
+	#if Input.is_action_pressed("player_action"):
+		#speed = run_speed
+		#instant_speed = instant_run_speed
+		#current_acceleration = run_acceleration
+	#else:
+		#speed = walk_speed
+		#instant_speed = instant_walk_speed
+		#current_acceleration = walk_acceleration
+	
+	# Nevermind
+	speed = run_speed
+	instant_speed = instant_run_speed
+	current_acceleration = run_acceleration
 	
 	# Duck On Floor variable! Used later.
 	var duck_on_floor = duck and is_on_floor()
