@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bhf7h2oabsfyl" path="res://src/levels/world1/levels/03-via_nostalgica.tscn" id="8_ataof"]
 [ext_resource type="PackedScene" uid="uid://15qaek1vvtlp" path="res://src/levels/world1/levels/04-tobgle_road.tscn" id="9_ae63i"]
 [ext_resource type="PackedScene" uid="uid://ddeg27kq40scv" path="res://src/levels/world1/levels/05-the_somewhat_smaller_bath.tscn" id="10_bjpkc"]
+[ext_resource type="PackedScene" uid="uid://ca1rtl8a01b16" path="res://src/levels/world1/levels/06-the_frosted_fields.tscn" id="10_umfba"]
 
 [node name="Worldmap" type="Node2D" unique_id=1039099861]
 process_mode = 3
@@ -58,6 +59,12 @@ level_section = 3
 position = Vector2(640, 1792)
 level_scene = ExtResource("9_ae63i")
 level_name = "Tobgle Road"
+level_section = 3
+
+[node name="Level6" parent="." unique_id=597971505 instance=ExtResource("5_bjpkc")]
+position = Vector2(416, 1696)
+level_scene = ExtResource("10_umfba")
+level_name = "The Frosted Fields"
 level_section = 3
 
 [node name="Level5" parent="." unique_id=1903374943 instance=ExtResource("5_bjpkc")]
