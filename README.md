@@ -8,6 +8,8 @@ Run and jump through multiple worlds, fighing off enemies by jumping on them, bu
 
 While it's not intended to be completely accurate to SuperTux, it's meant to recreate the "feel" of old SuperTux, although it will be somewhat different in certain ways.
 
+It will also include new worlds.
+
 ## Story: Penny gets captured!
 Tux and Penny were out having a nice picnic on the ice fields of Antarctica. Suddenly, a creature jumped from behind an ice bush, there was a flash, and Tux fell unconscious!
 
