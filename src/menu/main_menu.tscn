@@ -40,6 +40,7 @@ centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1675591946]
 position = Vector2(320, 128)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_pdh6n")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=730117898]
@@ -74,6 +75,7 @@ theme_override_fonts/font = ExtResource("2_g2ne3")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = ExtResource("3_o3lno")
 theme_override_styles/pressed = ExtResource("3_o3lno")
+disabled = true
 text = "Bonus Levels"
 
 [node name="Options" type="Button" parent="Panel/VBoxContainer" unique_id=2038598506]
@@ -83,6 +85,7 @@ theme_override_fonts/font = ExtResource("2_g2ne3")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = ExtResource("3_o3lno")
 theme_override_styles/pressed = ExtResource("3_o3lno")
+disabled = true
 text = "Options"
 
 [node name="Credits" type="Button" parent="Panel/VBoxContainer" unique_id=717542512]
@@ -103,3 +106,22 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = ExtResource("3_o3lno")
 theme_override_styles/pressed = ExtResource("3_o3lno")
 text = "Exit"
+
+[node name="RichTextLabel" type="Label" parent="." unique_id=288100036]
+z_index = 101
+offset_top = 416.0
+offset_right = 640.0
+offset_bottom = 480.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_g2ne3")
+theme_override_font_sizes/font_size = 11
+text = "This program is free software; you can redistribute it and/or modify it under the terms
+of the GNU General Public License as published by the Free Software Foundation, either 
+version 3 of the License, or (at your option) any later version.
+This program has no warranty! See the GNU General Public License for more details."
+horizontal_alignment = 1
+vertical_alignment = 1

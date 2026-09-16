@@ -78,10 +78,10 @@ content = 1
 position = Vector2(6400, 224)
 
 [node name="FlyingSnowball" parent="." unique_id=812875192 instance=ExtResource("9_dujyc")]
-position = Vector2(6496, 288)
+position = Vector2(6560, 224)
 
 [node name="FlyingSnowball2" parent="." unique_id=2132820696 instance=ExtResource("9_dujyc")]
-position = Vector2(6583, 352)
+position = Vector2(6720, 288)
 
 [node name="BonusBlock5" parent="." unique_id=655201278 instance=ExtResource("8_ixmni")]
 position = Vector2(7744, 192)
@@ -145,7 +145,7 @@ position = Vector2(1216, 352)
 position = Vector2(992, 384)
 
 [node name="FlyingSnowball3" parent="." unique_id=1779575791 instance=ExtResource("9_dujyc")]
-position = Vector2(8704, 320)
+position = Vector2(8768, 128)
 
 [node name="Iceblock4" parent="." unique_id=85290636 instance=ExtResource("14_fsfu2")]
 position = Vector2(9968, 352)

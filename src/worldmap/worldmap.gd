@@ -1,9 +1,26 @@
 extends Node2D
 class_name Worldmap
 
-# Made by AnatolyStev, ported to Godot for GodotTux by Vaesea and AnatolyStev
+# MileTux
 
-# Note from AnatolyStev all the way back in GodotTux: "Play Supertux Free NOW Online Games for All Ages SuperTux Platforming Fun 2020"
+# Worldmap - An RPG-like worldmap scene where the player enters different levels
+
+# Copyright (C) 2006 Matthias Braun <matze@braunis.de>
+# Copyright (C) 2026 Sophie Ball <sophieballvaesea@proton.me>
+# Copyright (C) 2026 AnatolyStev
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the license or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should've received a copy of the GNU General Public License along
+# with this program. If not, see <http://www.gnu.org/licenses/>.
 
 @export var license = "CC-BY-SA 4.0"
 @export var worldmap_width = 100

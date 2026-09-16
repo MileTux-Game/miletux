@@ -15,7 +15,7 @@ centered = false
 [node name="Text" type="RichTextLabel" parent="." unique_id=731141755]
 offset_top = 480.0
 offset_right = 640.0
-offset_bottom = 960.0
+offset_bottom = 976.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = 1
 theme_override_constants/paragraph_separation = 4
@@ -32,7 +32,9 @@ Credits
 SuperTux Team (SuperTux Milestone 1 (v0.1.0-v0.1.4) and Milestone 2 (v0.3.0-v0.5.1) assets)
 Godot Developers (The Godot Engine, which was used to make this game)
 
-[font_size=24]StoneTux Developers[/font_size]
+Godot is licensed under the MIT license.
+
+[font_size=24]MileTux Developers[/font_size]
 Vaesea (Main developer)
 AnatolyStev (Some code)
 

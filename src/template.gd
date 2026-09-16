@@ -1,12 +1,7 @@
-extends Block
+extends Node
 
-# MileTux
-
-# Bonus Block - A very simple script that just sets a variable.
-# Copyright (C) 2009 Ingo Ruhnke <grumbel@gmail.com> (Adding him to the 
-# credits part just to be safe as he was in the SuperTux bonus_block.cpp 
-# copyright header)
-# Copyright (C) 2026 Sophie Ball <sophieballvaesea@proton.me>
+# Something - Description
+# Copyright (C) Year Name <email>
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,7 +15,3 @@ extends Block
 #
 # You should've received a copy of the GNU General Public License along
 # with this program. If not, see <http://www.gnu.org/licenses/>.
-
-func _ready() -> void:
-	bonus = true
-	super()
