@@ -10,6 +10,10 @@ While it's not intended to be completely accurate to SuperTux, it's meant to rec
 
 It will also include new worlds.
 
+### License Information
+For copyright headers in source code files, they are based on the SuperTux version of the thing just to be safe. Just because someone's name / username is in there, doesn't mean that they worked on the MileTux version of the file, unless the year of the copyright text is
+2026 or higher. For more information, check commits.
+
 ## Story: Penny gets captured!
 Tux and Penny were out having a nice picnic on the ice fields of Antarctica. Suddenly, a creature jumped from behind an ice bush, there was a flash, and Tux fell unconscious!
 
