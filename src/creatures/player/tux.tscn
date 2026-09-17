@@ -150,7 +150,7 @@ emitting = false
 amount = 16
 texture = ExtResource("2_32n8q")
 preprocess = 2.0
-visibility_rect = Rect2(-48, -32, 100, 80)
+visibility_rect = Rect2(-500, -250, 1000, 500)
 process_material = SubResource("ParticleProcessMaterial_32n8q")
 
 [node name="FireImage" type="AnimatedSprite2D" parent="." unique_id=264736650]
