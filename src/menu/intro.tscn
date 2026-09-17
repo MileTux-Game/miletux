@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjmui4esjhxo0"]
 
 [ext_resource type="Script" uid="uid://5qcx0f4kl34s" path="res://src/menu/cutscene.gd" id="1_yfx5u"]
-[ext_resource type="Texture2D" uid="uid://md2t5n2pk33u" path="res://data/images/background/arctis.jpg" id="2_yfx5u"]
+[ext_resource type="Texture2D" uid="uid://md2t5n2pk33u" path="res://data/images/background/arctis.png" id="2_yfx5u"]
 [ext_resource type="PackedScene" uid="uid://dywa2f2fbtmh4" path="res://src/menu/text_scroll.tscn" id="3_yfx5u"]
 
 [node name="Intro" type="Node2D" unique_id=551078819]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsvoc8334cq1d"]
 
-[ext_resource type="Texture2D" uid="uid://md2t5n2pk33u" path="res://data/images/background/arctis.jpg" id="1_1k071"]
+[ext_resource type="Texture2D" uid="uid://md2t5n2pk33u" path="res://data/images/background/arctis.png" id="1_1k071"]
 [ext_resource type="Script" uid="uid://cselul0whej81" path="res://src/menu/main_menu.gd" id="1_p2uv2"]
 [ext_resource type="FontFile" uid="uid://boltmv8cfep8v" path="res://data/fonts/SuperTux-Medium.ttf" id="2_g2ne3"]
 [ext_resource type="StyleBox" uid="uid://c3uar07f52bxx" path="res://data/styles/main_menu_button.tres" id="3_o3lno"]

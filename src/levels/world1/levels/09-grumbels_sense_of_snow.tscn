@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://b05nxpprj8rja"]
 
 [ext_resource type="Script" uid="uid://byo7kg6dkfec" path="res://src/levels/level.gd" id="1_ct8xi"]
-[ext_resource type="Texture2D" uid="uid://md2t5n2pk33u" path="res://data/images/background/arctis.jpg" id="2_masfa"]
+[ext_resource type="Texture2D" uid="uid://md2t5n2pk33u" path="res://data/images/background/arctis.png" id="2_masfa"]
 [ext_resource type="TileSet" uid="uid://xjjvb65pyuqh" path="res://data/tilesets/level.tres" id="3_x6jqv"]
 [ext_resource type="PackedScene" uid="uid://33idnohaw00u" path="res://src/creatures/player/tux.tscn" id="4_55d1m"]
 [ext_resource type="PackedScene" uid="uid://bhjgd4oianlfl" path="res://src/global/camera.tscn" id="5_cwlw3"]

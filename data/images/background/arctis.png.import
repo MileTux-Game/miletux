@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://md2t5n2pk33u"
-path="res://.godot/imported/arctis.jpg-c546249627818bb411b4855dfcac4845.ctex"
+path="res://.godot/imported/arctis.png-c546249627818bb411b4855dfcac4845.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/images/background/arctis.jpg"
-dest_files=["res://.godot/imported/arctis.jpg-c546249627818bb411b4855dfcac4845.ctex"]
+source_file="res://data/images/background/arctis.png"
+dest_files=["res://.godot/imported/arctis.png-c546249627818bb411b4855dfcac4845.ctex"]
 
 [params]
 
