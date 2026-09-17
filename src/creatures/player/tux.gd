@@ -128,6 +128,18 @@ func _physics_process(delta: float) -> void:
 				shoot_fire()
 		animate()
 	
+	# Small check to make sure the correct star particles are emitting when Tux is damaged / grows while he
+	# has the star power-up.
+	if Global.tux_star_invincible:
+		if TuxManager.current_state == TuxManager.TuxStates.SMALL:
+			if $LargeStars.emitting:
+				$LargeStars.emitting = false
+				$SmallStars.emitting = true
+		else:
+			if $SmallStars.emitting:
+				$SmallStars.emitting = false
+				$LargeStars.emitting = true
+	
 	# If the game is not paused, allow Tux to throw the object he's holding.
 	if not Global.paused:
 		if Input.is_action_just_released("player_action") and not held_object == null and not held_object.held_by == null:
@@ -451,7 +463,10 @@ func get_star():
 		return
 	
 	Global.tux_star_invincible = true
-	$Stars.emitting = true
+	if TuxManager.current_state == TuxManager.TuxStates.SMALL:
+		$SmallStars.emitting = true
+	else:
+		$LargeStars.emitting = true
 	$Star.play()
 	Music.stream = load(invincible_music)
 	Music.play()
@@ -460,7 +475,10 @@ func get_star():
 # Used by the goal.
 func get_star_lite():
 	Global.tux_star_invincible = true
-	$Stars.emitting = true
+	if TuxManager.current_state == TuxManager.TuxStates.SMALL:
+		$SmallStars.emitting = true
+	else:
+		$LargeStars.emitting = true
 
 # Stops star music, used by the goal.
 func stop_star_music():
@@ -472,7 +490,8 @@ func remove_star():
 		return
 	
 	Global.tux_star_invincible = false
-	$Stars.emitting = false
+	$LargeStars.emitting = false
+	$SmallStars.emitting = false
 	Music.stream = load(Global.level_song)
 	Music.play()
 

@@ -39,6 +39,18 @@ scale_max = 0.75
 alpha_curve = SubResource("CurveTexture_ji878")
 anim_offset_max = 1.0
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ji878"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(1, 24, 0)
+emission_shape_scale = Vector3(16, 16, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_min = 0.75
+scale_max = 0.75
+alpha_curve = SubResource("CurveTexture_ji878")
+anim_offset_max = 1.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfipr"]
 size = Vector2(28, 29)
 
@@ -143,7 +155,7 @@ floor_snap_length = 10.0
 platform_on_leave = 2
 script = ExtResource("1_fjqv6")
 
-[node name="Stars" type="GPUParticles2D" parent="." unique_id=1967267127]
+[node name="LargeStars" type="GPUParticles2D" parent="." unique_id=1967267127]
 z_index = 1
 material = SubResource("CanvasItemMaterial_ylpwo")
 emitting = false
@@ -152,6 +164,16 @@ texture = ExtResource("2_32n8q")
 preprocess = 2.0
 visibility_rect = Rect2(-500, -250, 1000, 500)
 process_material = SubResource("ParticleProcessMaterial_32n8q")
+
+[node name="SmallStars" type="GPUParticles2D" parent="." unique_id=622605862]
+z_index = 1
+material = SubResource("CanvasItemMaterial_ylpwo")
+emitting = false
+amount = 10
+texture = ExtResource("2_32n8q")
+preprocess = 2.0
+visibility_rect = Rect2(-500, -250, 1000, 500)
+process_material = SubResource("ParticleProcessMaterial_ji878")
 
 [node name="FireImage" type="AnimatedSprite2D" parent="." unique_id=264736650]
 visible = false
