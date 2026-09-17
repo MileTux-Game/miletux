@@ -28,7 +28,6 @@ If you have any, screenshots are always a good thing to add.
 
 **Desktop (you don't need to complete the following information, but it always helps):**
  - OS: [e.g. Windows, Mac, Linux, etc...]
- - Linux Kernel version: Put here if you're using Linux.
 
 **Additional context**
 Add any other context about the problem here.
