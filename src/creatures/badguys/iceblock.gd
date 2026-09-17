@@ -108,16 +108,16 @@ func _physics_process(delta: float) -> void:
 		else:
 			global_position.y = held_by.global_position.y - (held_by.get_node("Collision").shape.size.y / 4)
 	
-	if current_iceblock_state == IceblockStates.MOVINGFLAT and is_on_wall():
-		if velocity.x * get_wall_normal().x < 0:
-			$Ricochet.play()
-	
 	animate()
 	move()
 	
+	# These were moved to be after the move function to fix a bug.
 	if is_on_wall() and not current_iceblock_state == IceblockStates.FLAT:
 		if velocity.x * get_wall_normal().x < 0:
 			flip_direction()
+	if current_iceblock_state == IceblockStates.MOVINGFLAT and is_on_wall():
+		if velocity.x * get_wall_normal().x < 0:
+			$Ricochet.play()
 	
 	previous_velocity_x = velocity.x
 	gd_was_colliding = $GroundDetector.is_colliding()
@@ -199,7 +199,12 @@ func interact(stomp, tux, fireball, iceblock): # TODO: Add Fireball bullets late
 				if current_iceblock_state == IceblockStates.NORMAL or current_iceblock_state == IceblockStates.MOVINGFLAT:
 					turn_flat()
 				elif current_iceblock_state == IceblockStates.FLAT:
-					turn_movingflat()
+					if stomp.get_parent().global_position.x < global_position.x + 16:
+						turn_movingflat(1)
+					elif stomp.get_parent().global_position.x > global_position.x + 16:
+						turn_movingflat(-1)
+					elif stomp.get_parent().global_position.x == global_position.x + 16:
+						turn_movingflat(1)
 	if stomp == null and not tux == null and fireball == null and iceblock == null:
 		if wait_to_collide <= 0:
 			if current_iceblock_state == IceblockStates.MOVINGFLAT or current_iceblock_state == IceblockStates.NORMAL:
@@ -212,12 +217,12 @@ func interact(stomp, tux, fireball, iceblock): # TODO: Add Fireball bullets late
 						death_fall(true)
 				else:
 					if not Global.tux_star_invincible:
-						turn_movingflat()
+						turn_movingflat(TuxManager.direction)
 					else:
 						death_fall(true)
 			else:
 				if not Global.tux_star_invincible:
-					turn_movingflat()
+					turn_movingflat(TuxManager.direction) # i honestly forgot why this is here
 				else:
 					death_fall(true)
 	if stomp == null and tux == null and not fireball == null and iceblock == null:
@@ -244,12 +249,12 @@ func interact(stomp, tux, fireball, iceblock): # TODO: Add Fireball bullets late
 			iceblock.death_fall(true)
 			death_fall(true)
 
-func turn_movingflat():
+func turn_movingflat(dir:int):
 	if Global.paused:
 		return
 	
 	current_iceblock_state = IceblockStates.MOVINGFLAT
-	direction = TuxManager.direction
+	direction = dir
 	velocity.x = direction * movingflat_speed
 	wait_to_collide = wait_time
 	set_collision_layer_value(3, false)
@@ -278,7 +283,7 @@ func throw():
 	if Global.paused:
 		return
 	
-	turn_movingflat()
+	turn_movingflat(TuxManager.direction)
 	held_by = null
 
 func _on_screen_entered():
