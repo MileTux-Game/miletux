@@ -6,7 +6,7 @@ class_name Block
 # Block - The class containing things used by every type of block.
 # Copyright (C) 2006 Matthias Braun <matze@braunis.de>
 # Copyright (C) 2026 Sophie Ball <sophieballvaesea@proton.me>
-
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the license or (at
