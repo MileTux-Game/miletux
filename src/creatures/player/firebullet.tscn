@@ -31,5 +31,5 @@ position = Vector2(8, 9)
 shape = SubResource("RectangleShape2D_dfipr")
 
 [node name="Notifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=413860984]
-rect = Rect2(0, 0, 16, 16)
-show_rect = false
+position = Vector2(0, 176)
+rect = Rect2(0, -176, 16, 1296)
