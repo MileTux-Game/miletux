@@ -1,5 +1,5 @@
 # MileTux - https://miletux-game.github.io/
-Last update: September 15, 2026
+Last update: September 18, 2026
 
 ## Description
 MileTux is a jump'n'run game meant to recreate old SuperTux's feel, using the old SuperTux assets and levels.
@@ -23,6 +23,8 @@ Tux looks and sees Nolok's fortress in the distance. Determined to save his belo
 
 ## Documentation
 Important documentation for MileTux is located in the wiki (https://miletux.miraheze.org/wiki/Main_Page) for Players, Developers and Modders! You can read those if you want.
+
+The GitHub wiki for this repository is considered "deprecated" and no longer has up-to-date information. It's recommended that you view the miraheze wiki instead.
 
 ## Running the game
 Currently, there is no complete release of this game. However, if you have a GitHub account, you can go to the Actions tab of the repository to get a "nightly" build of the game for your platform (Windows, Mac or Linux). Please be aware that those builds may be unstable, although if you want to report a bug, you should make sure it's reproducible on the latest nightly build.
