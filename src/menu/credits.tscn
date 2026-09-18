@@ -15,7 +15,7 @@ centered = false
 [node name="Text" type="RichTextLabel" parent="." unique_id=731141755]
 offset_top = 480.0
 offset_right = 640.0
-offset_bottom = 976.0
+offset_bottom = 992.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = 1
 theme_override_constants/paragraph_separation = 4
@@ -34,9 +34,10 @@ Godot Developers (The Godot Engine, which was used to make this game)
 
 Godot is licensed under the MIT license.
 
-[font_size=24]MileTux Developers[/font_size]
+[font_size=24]MileTux Developers and Contributors[/font_size]
 Vaesea (Main developer)
 AnatolyStev (Some code)
+FilipOK (Improved backgrounds)
 
 The other people mentioned were not involved with making this game.
 
