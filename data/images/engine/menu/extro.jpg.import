@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://iruxavsg7ibp"
-path="res://.godot/imported/oiltux.jpg-b7896c2c010f886e6bbce71e029ed9cf.ctex"
+uid="uid://b72i2di84xftt"
+path="res://.godot/imported/extro.jpg-65ae2065025099865a70488cfc19dadd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/images/menu/oiltux.jpg"
-dest_files=["res://.godot/imported/oiltux.jpg-b7896c2c010f886e6bbce71e029ed9cf.ctex"]
+source_file="res://data/images/engine/menu/extro.jpg"
+dest_files=["res://.godot/imported/extro.jpg-65ae2065025099865a70488cfc19dadd.ctex"]
 
 [params]
 

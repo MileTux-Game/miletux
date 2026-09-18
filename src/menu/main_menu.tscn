@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://cselul0whej81" path="res://src/menu/main_menu.gd" id="1_p2uv2"]
 [ext_resource type="FontFile" uid="uid://boltmv8cfep8v" path="res://data/fonts/SuperTux-Medium.ttf" id="2_g2ne3"]
 [ext_resource type="StyleBox" uid="uid://c3uar07f52bxx" path="res://data/styles/main_menu_button.tres" id="3_o3lno"]
-[ext_resource type="Texture2D" uid="uid://d10xbtew46xgo" path="res://data/images/menu/logo.png" id="3_pdh6n"]
-[ext_resource type="Texture2D" uid="uid://cge6771gxvuo" path="res://data/images/menu/frame.png" id="4_such8"]
+[ext_resource type="Texture2D" uid="uid://d10xbtew46xgo" path="res://data/images/engine/menu/logo.png" id="3_pdh6n"]
+[ext_resource type="Texture2D" uid="uid://cge6771gxvuo" path="res://data/images/engine/menu/frame.png" id="4_such8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dfipr"]
 bg_color = Color(0.53999996, 0.7546667, 1, 0.59607846)

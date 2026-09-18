@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MileTux"
-config/version="0.1.0-alpha.1"
+config/version="0.1.0-alpha.2"
 run/main_scene="uid://bsvoc8334cq1d"
 config/use_custom_user_dir=true
 config/auto_accept_quit=false
@@ -20,7 +20,7 @@ boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 boot_splash/stretch_mode=0
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="uid://bt5tl2rad5joe"
 
 [autoload]
 

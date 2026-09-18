@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://g60g2yoxog8"]
 
-[ext_resource type="Texture2D" uid="uid://iruxavsg7ibp" path="res://data/images/menu/oiltux.jpg" id="1_3joxc"]
+[ext_resource type="Texture2D" uid="uid://iruxavsg7ibp" path="res://data/images/engine/menu/oiltux.jpg" id="1_3joxc"]
 [ext_resource type="Script" uid="uid://5qcx0f4kl34s" path="res://src/menu/cutscene.gd" id="1_6yh48"]
 [ext_resource type="FontFile" uid="uid://boltmv8cfep8v" path="res://data/fonts/SuperTux-Medium.ttf" id="3_kh5sd"]
 [ext_resource type="Script" uid="uid://c57fgxiyu3wut" path="res://src/menu/text_scroll.gd" id="4_kh5sd"]
