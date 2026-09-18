@@ -74,7 +74,7 @@ func _on_tux_detector_body_entered(body):
 	if Global.paused:
 		return
 	
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and not get_tux_stomp(body):
 		held_badguy_check(true, body)
 	if body.is_in_group("Badguy"):
 		if body == self:

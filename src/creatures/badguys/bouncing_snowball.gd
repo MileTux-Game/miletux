@@ -117,7 +117,7 @@ func interact(tux):
 	if bouncybouncebouncingsnowball:
 		return
 
-	if not Global.tux_star_invincible:
+	if not Global.tux_star_invincible and not get_tux_stomp(tux):
 		held_badguy_check(true, tux)
 	else:
 		death_fall(false)

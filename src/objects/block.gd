@@ -69,34 +69,36 @@ func _on_dd_body_entered(body):
 	if Global.paused:
 		return
 	
-	if body.previous_position.y <= global_position.y:
-		return
-	
-	if body.is_in_group("Player") and not empty and body.velocity.y >= 0 and not body.dead:
-		turn_empty("up_down")
+	if body.is_in_group("Player") and not empty and body.velocity.y >= 0:
+		if body.previous_position.y <= global_position.y:
+			return
 		
-		if hidden_block:
-			$Image.visible = true
-			$Collision.set_deferred("one_way_collision", false)
-			hidden_block_activated = true
-		
-		if body.global_position.x < global_position.x + 16:
-			spawn_item(ItemDirections.RIGHT)
-		elif body.global_position.x > global_position.x + 16:
-			spawn_item(ItemDirections.LEFT)
-		elif body.global_position.x == global_position.x + 16:
-			spawn_item(ItemDirections.RIGHT)
+		if not body.dead or not body.is_on_floor():
+			turn_empty("up_down")
+			
+			if hidden_block:
+				$Image.visible = true
+				$Collision.set_deferred("one_way_collision", false)
+				hidden_block_activated = true
+			
+			if body.global_position.x < global_position.x + 16:
+				spawn_item(ItemDirections.RIGHT)
+			elif body.global_position.x > global_position.x + 16:
+				spawn_item(ItemDirections.LEFT)
+			elif body.global_position.x == global_position.x + 16:
+				spawn_item(ItemDirections.RIGHT)
 	elif body.is_in_group("Player") and empty and body.velocity.y >= 0 and not body.dead:
 		$BrickSound.play()
 	
-	if body.is_in_group("Badguy") and not empty and body.kill_other_enemies and not body.current_iceblock_state == body.IceblockStates.HELD: # nooooooo it's duplicated code!!!! and long if statement!!!!
-		turn_empty("up_down")
-		if body.global_position.x < global_position.x + 16:
-			spawn_item(ItemDirections.RIGHT)
-		elif body.global_position.x > global_position.x + 16:
-			spawn_item(ItemDirections.LEFT)
-		elif body.global_position.x == global_position.x + 16:
-			spawn_item(ItemDirections.RIGHT)
+	if body.is_in_group("Badguy") and not empty:
+		if body.kill_other_enemies and not body.current_iceblock_state == body.IceblockStates.HELD:
+			turn_empty("up_down")
+			if body.global_position.x < global_position.x + 16:
+				spawn_item(ItemDirections.RIGHT)
+			elif body.global_position.x > global_position.x + 16:
+				spawn_item(ItemDirections.LEFT)
+			elif body.global_position.x == global_position.x + 16:
+				spawn_item(ItemDirections.RIGHT)
 
 func _on_dl_body_entered(body):
 	if Global.paused:
