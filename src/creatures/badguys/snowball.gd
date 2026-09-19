@@ -63,7 +63,7 @@ func _on_tux_detector_area_entered(area):
 		if current_state == BadguyStates.DEAD:
 			return
 		
-		if get_tux_stomp(area.get_parent()):
+		if get_tux_stomp(area.get_parent(), true):
 			if not Global.tux_star_invincible:
 				area.get_parent().stomp_bounce()
 				death_squish()
@@ -74,7 +74,7 @@ func _on_tux_detector_body_entered(body):
 	if Global.paused:
 		return
 	
-	if body.is_in_group("Player") and not get_tux_stomp(body):
+	if body.is_in_group("Player") and not get_tux_stomp(body, false):
 		held_badguy_check(true, body)
 	if body.is_in_group("Badguy"):
 		if body == self:

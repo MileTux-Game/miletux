@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://botyyyh2i7wyv"]
+
+[ext_resource type="Texture2D" uid="uid://bluyhl3nnreyq" path="res://data/images/worldmap/common/leveldot/messagedot.png" id="1_uw7cc"]
+[ext_resource type="Script" uid="uid://8bgt8xoeej0h" path="res://src/worldmap/objects/message_dot.gd" id="2_uw7cc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dfipr"]
+radius = 9.0
+
+[node name="MessageDot" type="Sprite2D" unique_id=147400429]
+process_mode = 3
+z_index = 49
+texture = ExtResource("1_uw7cc")
+centered = false
+script = ExtResource("2_uw7cc")
+
+[node name="Detector" type="Area2D" parent="." unique_id=122486868]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector" unique_id=1710752526]
+position = Vector2(15.5, 15.5)
+shape = SubResource("CircleShape2D_dfipr")

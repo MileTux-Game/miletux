@@ -69,7 +69,7 @@ func _on_tux_detector_area_entered(area):
 			return
 		
 		if not Global.tux_star_invincible:
-			if get_tux_stomp(area.get_parent()):
+			if get_tux_stomp(area.get_parent(), true):
 				bouncybouncebouncingsnowball = true
 				area.get_parent().position.y -= 1 # i hate bouncing snowballs
 				$TuxDetector.set_deferred("monitoring", false)
@@ -85,7 +85,7 @@ func _on_tux_detector_body_entered(body):
 	
 	if body.is_in_group("Player"):
 		await get_tree().create_timer(0.02).timeout # HACK: HACK: HACK: HACK
-		interact(body)
+		interact(body, false)
 	
 	if body.is_in_group("Badguy"):
 		if not body == self:
@@ -110,14 +110,17 @@ func death_squish():
 	await get_tree().create_timer(death_time).timeout
 	queue_free()
 
-func interact(tux):
-	if current_state == BadguyStates.DEAD or Global.paused:
+func interact(tux, area:bool):
+	if current_state == BadguyStates.DEAD or Global.paused or bouncybouncebouncingsnowball:
 		return
 	
-	if bouncybouncebouncingsnowball:
-		return
-
-	if not Global.tux_star_invincible and not get_tux_stomp(tux):
-		held_badguy_check(true, tux)
+	if area:
+		if not Global.tux_star_invincible and not get_tux_stomp(tux, true):
+			held_badguy_check(true, tux)
+		else:
+			death_fall(false)
 	else:
-		death_fall(false)
+		if not Global.tux_star_invincible and not get_tux_stomp(tux, false):
+			held_badguy_check(true, tux)
+		else:
+			death_fall(false)

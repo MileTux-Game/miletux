@@ -187,7 +187,7 @@ func interact(stomp, tux, fireball, iceblock): # TODO: Add Fireball bullets late
 		if current_state == BadguyStates.DEAD:
 			return
 		
-		if get_tux_stomp(stomp.get_parent()):
+		if get_tux_stomp(stomp.get_parent(), true):
 			if not Global.tux_star_invincible:
 				stomp.get_parent().stomp_bounce()
 			else:
@@ -208,7 +208,7 @@ func interact(stomp, tux, fireball, iceblock): # TODO: Add Fireball bullets late
 	if stomp == null and not tux == null and fireball == null and iceblock == null:
 		if wait_to_collide <= 0:
 			if current_iceblock_state == IceblockStates.MOVINGFLAT or current_iceblock_state == IceblockStates.NORMAL:
-				if not get_tux_stomp(tux):
+				if not get_tux_stomp(tux, false):
 					held_badguy_check(false, tux)
 			elif current_iceblock_state == IceblockStates.FLAT:
 				if Input.is_action_pressed("player_action") and tux.held_object == null:

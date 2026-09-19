@@ -120,13 +120,17 @@ func death_squish():
 	queue_free()
 
 # this function exists to be re-used
-func get_tux_stomp(tux:CharacterBody2D):
-	if tux.get_real_velocity().y > 0:
-		return true
-	elif tux.get_collision_bottom() < (get_collision_top() + 16):
-		return true
-	
-	return false
+func get_tux_stomp(tux:CharacterBody2D, area:bool):
+	if area:
+		return tux.get_real_velocity().y > 0
+	else:
+		if tux.dead:
+			return false
+		
+		if tux.get_collision_bottom() < (get_collision_top() + 16):
+			return true
+		
+		return false
 
 func get_collision_top():
 	return global_position.y + $Collision.position.y - ($Collision.shape.size.y / 2)
