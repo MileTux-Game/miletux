@@ -20,15 +20,16 @@ class_name FlyingSnowball
 # You should've received a copy of the GNU General Public License along
 # with this program. If not, see <http://www.gnu.org/licenses/>.
 
-var fly_speed = 100
+var fly_speed = 100 # Speed of Flying Snowball
+var fly_direction = 1 # 1 = up, -1 = down
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$TuxDetector.connect("area_entered", _on_tux_detector_area_entered)
 	$TuxDetector.connect("body_entered", _on_tux_detector_body_entered)
 	$DirectionChange.connect("timeout", _on_dc_timeout)
 	$Image.play("flying")
 	velocity.y = -fly_speed
+	fly_direction = 1
 	$DirectionChange.start(0.5)
 	super()
 
@@ -88,8 +89,9 @@ func _on_tux_detector_body_entered(body):
 func _on_dc_timeout():
 	if current_state == BadguyStates.DEAD or Global.paused:
 		return
-
-	velocity.y = velocity.y * -1
+	
+	fly_direction *= -1
+	velocity.y = -fly_speed * fly_direction
 	
 	$DirectionChange.start(1.0)
 
@@ -119,3 +121,17 @@ func interact(tux):
 		death_fall(false)
 	elif not Global.tux_star_invincible and get_tux_stomp(tux, false):
 		death_squish()
+
+func _on_tld_body_entered(body):
+	if Global.paused:
+		return
+	
+	if body.is_in_group("Player"):
+		$Image.flip_h = false
+
+func _on_trd_body_entered(body):
+	if Global.paused:
+		return
+	
+	if body.is_in_group("Player"):
+		$Image.flip_h = true

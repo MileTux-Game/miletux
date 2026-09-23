@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bov86ofhwnhpq" path="res://src/objects/goal.tscn" id="16_tmh4r"]
 [ext_resource type="PackedScene" uid="uid://cgevbinru2wi2" path="res://src/objects/checkpoint.tscn" id="17_bbhxr"]
 
-[node name="Template" type="Node2D" unique_id=131155539]
+[node name="23A" type="Node2D" unique_id=131155539]
 script = ExtResource("1_8kivo")
 music = "uid://dtophyuf3d8mx"
 width = 515

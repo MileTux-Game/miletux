@@ -19,16 +19,16 @@
 [ext_resource type="PackedScene" uid="uid://b1wiuw82ovibs" path="res://src/creatures/badguys/bomb.tscn" id="17_clt64"]
 [ext_resource type="PackedScene" uid="uid://cgevbinru2wi2" path="res://src/objects/checkpoint.tscn" id="18_clt64"]
 
-[sub_resource type="Gradient" id="Gradient_4jd7p"]
+[sub_resource type="Gradient" id="Gradient_clt64"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0.39215687, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_x25eg"]
-gradient = SubResource("Gradient_4jd7p")
+gradient = SubResource("Gradient_clt64")
 width = 640
 height = 480
 fill_to = Vector2(0, 1)
 
-[node name="Template" type="Node2D" unique_id=131155539]
+[node name="NC" type="Node2D" unique_id=131155539]
 script = ExtResource("1_x25eg")
 music = "uid://dth0pejmql1rx"
 width = 515
