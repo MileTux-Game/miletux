@@ -107,7 +107,9 @@ func save_data():
 		"save_version": save_version,
 		"tux_state": tux_state
 	}
+	
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	
 	if file:
 		var json_string = JSON.stringify(data)
 		file.store_string(json_string)
@@ -119,6 +121,7 @@ func load_data():
 		return
 	
 	var file = FileAccess.open(save_path, FileAccess.READ)
+	
 	if file:
 		var json_string = file.get_as_text()
 		file.close()

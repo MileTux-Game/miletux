@@ -3,7 +3,7 @@ class_name Worldmap
 
 # MileTux
 
-# Worldmap - An RPG-like worldmap scene where the player enters different levels
+# Worldmap - An RPG-like worldmap scene where the player enters different levels.
 
 # Copyright (C) 2006 Matthias Braun <matze@braunis.de>
 # Copyright (C) 2026 Sophie Ball <sophieballvaesea@proton.me>
@@ -36,7 +36,10 @@ const hud = preload("res://src/hud/worldmap_hud.tscn")
 @onready var tux = $WorldmapTux
 
 func _ready() -> void:
+	var last_worldmap = Global.current_worldmap
+	
 	Global.current_worldmap = scene_file_path
+	
 	Global.width_of_worldmap = worldmap_width * Global.tile_size
 	Global.height_of_worldmap = worldmap_height * Global.tile_size
 	
@@ -55,15 +58,19 @@ func _ready() -> void:
 	levels = get_tree().get_nodes_in_group("Level")
 	rocks = get_tree().get_nodes_in_group("Rock")
 	
-	if Global.use_spawn_point:
-		if get_spawn_point(Global.global_spawn_name):
-			tux.position = get_spawn_point(Global.global_spawn_name).position
-		Global.use_spawn_point = false
+	if not last_worldmap == scene_file_path:
+		tux.position = $MainWorldmapSpawnPoint.position
 	else:
-		if Global.tux_wm_x == 0 and Global.tux_wm_y == 0:
-			tux.position = Vector2($MainWorldmapSpawnPoint.position.x, $MainWorldmapSpawnPoint.position.y)
+		if Global.use_spawn_point:
+			if get_spawn_point(Global.global_spawn_name):
+				if Global.current_worldmap == scene_file_path:
+					tux.position = get_spawn_point(Global.global_spawn_name).position
+				else:
+					set_tux_position_after_check()
+					
+			Global.use_spawn_point = false
 		else:
-			tux.position = Vector2(Global.tux_wm_x, Global.tux_wm_y)
+			set_tux_position_after_check()
 	
 	check_rock_unlocks() # The Rock
 	check_levels_completed() # The Level
@@ -104,3 +111,9 @@ func _notification(what: int) -> void:
 		Global.tux_state = TuxManager.current_state
 		Global.save_data()
 		get_tree().quit()
+
+func set_tux_position_after_check():
+	if Global.tux_wm_x == 0 and Global.tux_wm_y == 0:
+		tux.position = Vector2($MainWorldmapSpawnPoint.position.x, $MainWorldmapSpawnPoint.position.y)
+	else:
+		tux.position = Vector2(Global.tux_wm_x, Global.tux_wm_y)

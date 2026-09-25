@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dx8vowcljw2mk" path="res://data/images/worldmap/shared/path.png" id="2_r6vw0"]
 [ext_resource type="Texture2D" uid="uid://bm0m704jmtcbx" path="res://data/images/worldmap/shared/water.png" id="3_fclgl"]
 [ext_resource type="Texture2D" uid="uid://ljscv2xff22a" path="res://data/images/worldmap/shared/shallow_water.png" id="4_r6vw0"]
+[ext_resource type="Texture2D" uid="uid://bvmr1v87be8f3" path="res://data/images/worldmap/shared/ladder.png" id="5_fclgl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rca1i"]
 resource_name = "Snow"
@@ -284,6 +285,13 @@ texture_region_size = Vector2i(32, 32)
 1:4/0 = 0
 2:4/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k1wf4"]
+texture = ExtResource("5_fclgl")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
@@ -291,3 +299,4 @@ sources/0 = SubResource("TileSetAtlasSource_rca1i")
 sources/1 = SubResource("TileSetAtlasSource_x2s5j")
 sources/2 = SubResource("TileSetAtlasSource_cqs4j")
 sources/3 = SubResource("TileSetAtlasSource_fclgl")
+sources/4 = SubResource("TileSetAtlasSource_k1wf4")

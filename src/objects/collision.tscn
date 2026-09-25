@@ -4,6 +4,7 @@
 size = Vector2(32, 32)
 
 [node name="Collision" type="StaticBody2D" unique_id=1730194880]
+z_index = 301
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1937501987]
 position = Vector2(16, 16)

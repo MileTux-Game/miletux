@@ -28,8 +28,13 @@ func _ready() -> void:
 		play("ring")
 
 func _on_something_detected(body):
-	if body.is_in_group("Player") and not Global.checkpoint_reached:
+	if Global.checkpoint_reached:
+		return
+	
+	if body.is_in_group("Player"):
 		print("Checkpoint reached!")
 		play("ring")
+		$Bell.play(0.16)
+		$Particles.emitting = true
 		Global.checkpoint_reached = true
 		Global.checkpoint_position = position

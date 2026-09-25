@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://riis0vsav1m4" path="res://data/images/tiles/darksnow/main.png" id="3_6k1mu"]
 [ext_resource type="Texture2D" uid="uid://c486hnrtru0aa" path="res://data/images/tiles/background/background.png" id="3_nyqkm"]
 [ext_resource type="PackedScene" uid="uid://757d41upbv8t" path="res://src/objects/coin.tscn" id="3_yaqh7"]
+[ext_resource type="Texture2D" uid="uid://dpar7hogxpn2f" path="res://data/images/tiles/misc/pole.png" id="4_kqyxk"]
 [ext_resource type="Texture2D" uid="uid://bsi65drogcm28" path="res://data/images/tiles/block/main.png" id="5_i5euq"]
 [ext_resource type="Texture2D" uid="uid://bchnm6aoeq583" path="res://data/images/tiles/goal/pole_sheet.png" id="6_ylpwo"]
 [ext_resource type="Texture2D" uid="uid://chw18rs58xai1" path="res://data/images/tiles/misc/signs.png" id="7_lqmno"]
@@ -207,6 +208,7 @@ texture_region_size = Vector2i(32, 32)
 11:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w2g50"]
+resource_name = "Snow Cave"
 texture = ExtResource("3_6k1mu")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -245,6 +247,64 @@ texture_region_size = Vector2i(32, 32)
 2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 3:4/0 = 0
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4sh2f"]
+resource_name = "Pole"
+texture = ExtResource("4_kqyxk")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+2:11/0 = 0
+3:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i5euq"]
 resource_name = "Misc Background"
@@ -581,3 +641,4 @@ sources/7 = SubResource("TileSetAtlasSource_162jq")
 sources/8 = SubResource("TileSetAtlasSource_kqyxk")
 sources/9 = SubResource("TileSetAtlasSource_s76xi")
 sources/10 = SubResource("TileSetAtlasSource_w2g50")
+sources/11 = SubResource("TileSetAtlasSource_4sh2f")
