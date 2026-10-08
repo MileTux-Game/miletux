@@ -37,7 +37,7 @@ Other useful keys include the Esc key, which is used to pause levels and go back
 In the worldmap, the arrow keys are used to navigate and Enter to enter the current level.
 
 ## Development status
-v0.1.0 Alpha 1 has released with around 9 levels. Development is going along well on Milestone 1.
+v0.1.0 Alpha 2 has released with around 10 levels. Development is going along well on Milestone 1, although it may not continue using Godot but instead, HaxeFlixel (with a new collision system).
 
 ## The End
 Thanks for trying out MileTux.
